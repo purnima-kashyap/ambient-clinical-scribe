@@ -15,3 +15,14 @@ Activate environment: .venv\Scripts\activate
 2. Install Core Dependencies : python -m pip install fastapi uvicorn
 
 3. run : uvicorn backend.main:app --reload
+
+## 🔊 Speaker Diarization Module
+Implemented the speaker diarization component to distinguish between different speakers in a doctor-patient conversation.
+
+- Identifies multiple speakers in an audio recording.
+- Labels speakers (e.g., Doctor and Patient).
+- Provides structured output for downstream SOAP note generation.
+- Integrated with FastAPI endpoints.
+
+GET `/diarize`
+Returns speaker diarization results.
