@@ -1,0 +1,15 @@
+Doctor: What brings you in today?
+
+Patient: I have had fever for three days and a headache since yesterday.
+
+Doctor: Any cough or cold symptoms?
+
+Patient: Mild cough, no cold.
+
+Doctor: Any allergies?
+
+Patient: No allergies.
+
+Doctor: Have you taken any medication?
+
+Patient: Only paracetamol.
