@@ -1,0 +1,15 @@
+Doctor: What brings you in today?
+
+Patient: I have been feeling very thirsty and tired lately.
+
+Doctor: How long has this been happening?
+
+Patient: Around two months.
+
+Doctor: Any frequent urination?
+
+Patient: Yes, especially during the night.
+
+Doctor: Do you have a history of diabetes?
+
+Patient: My father has Type 2 diabetes.
