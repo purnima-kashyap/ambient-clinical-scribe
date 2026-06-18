@@ -1,0 +1,11 @@
+Subjective:
+Patient reports fever for three days, headache since yesterday, and mild cough.
+
+Objective:
+No objective examination data available.
+
+Assessment:
+Likely viral fever.
+
+Plan:
+Hydration, rest, monitor symptoms, continue paracetamol as needed.
