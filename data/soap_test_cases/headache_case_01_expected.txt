@@ -1,0 +1,11 @@
+Subjective:
+Patient reports headache since yesterday.
+
+Objective:
+No fever reported.
+
+Assessment:
+Tension Headache.
+
+Plan:
+Recommend hydration, rest, and analgesics as required.
