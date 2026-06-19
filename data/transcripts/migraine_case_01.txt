@@ -1,0 +1,15 @@
+Doctor: What brings you in today?
+
+Patient: I have severe headaches with nausea.
+
+Doctor: When did they start?
+
+Patient: About two days ago.
+
+Doctor: Is light making it worse?
+
+Patient: Yes, bright lights make it unbearable.
+
+Doctor: Have you had migraines before?
+
+Patient: Yes, several times.
