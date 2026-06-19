@@ -1,0 +1,15 @@
+Doctor: What brings you in today?
+
+Patient: I've been having headaches and feeling dizzy for the last three weeks.
+
+Doctor: Have you checked your blood pressure?
+
+Patient: Yes, it was around 150 over 95 yesterday.
+
+Doctor: Any chest pain or shortness of breath?
+
+Patient: No, just headaches and dizziness.
+
+Doctor: Does anyone in your family have high blood pressure?
+
+Patient: Yes, my mother has hypertension.
