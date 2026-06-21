@@ -1,0 +1,15 @@
+Doctor: What brings you in?
+
+Patient: I've had a headache since yesterday.
+
+Doctor: Where is the pain?
+
+Patient: Across my forehead.
+
+Doctor: Any fever?
+
+Patient: No.
+
+Doctor: Have you taken anything?
+
+Patient: Just paracetamol.

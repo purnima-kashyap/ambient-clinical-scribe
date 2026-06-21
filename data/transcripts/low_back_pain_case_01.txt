@@ -1,0 +1,15 @@
+Doctor: What brings you here today?
+
+Patient: I have pain in my lower back.
+
+Doctor: How long?
+
+Patient: Five days.
+
+Doctor: Did you lift anything heavy?
+
+Patient: Yes, while moving furniture.
+
+Doctor: Any numbness?
+
+Patient: No.

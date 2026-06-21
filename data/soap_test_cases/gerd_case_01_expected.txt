@@ -1,0 +1,11 @@
+Subjective:
+Patient reports heartburn after meals with sour taste.
+
+Objective:
+Symptoms worsen when lying down.
+
+Assessment:
+Likely Gastroesophageal Reflux Disease (GERD).
+
+Plan:
+Recommend dietary changes, avoid late meals, and consider antacid therapy.

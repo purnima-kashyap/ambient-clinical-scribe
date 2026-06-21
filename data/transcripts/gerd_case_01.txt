@@ -1,0 +1,15 @@
+Doctor: What symptoms are bothering you?
+
+Patient: Burning sensation in my chest after meals.
+
+Doctor: Any sour taste?
+
+Patient: Yes.
+
+Doctor: How long has this been happening?
+
+Patient: About a month.
+
+Doctor: Does it worsen when lying down?
+
+Patient: Yes.

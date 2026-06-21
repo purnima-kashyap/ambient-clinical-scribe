@@ -1,0 +1,11 @@
+Subjective:
+Patient reports headaches and dizziness for three weeks.
+
+Objective:
+Blood pressure reported as 150/95 mmHg.
+
+Assessment:
+Possible Hypertension.
+
+Plan:
+Recommend regular blood pressure monitoring, dietary salt reduction, exercise, and physician follow-up.
