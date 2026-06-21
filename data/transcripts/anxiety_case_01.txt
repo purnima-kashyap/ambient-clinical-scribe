@@ -1,0 +1,19 @@
+Doctor: How have you been feeling lately?
+
+Patient: I've been feeling constantly worried for the past month.
+
+Doctor: What are you worried about?
+
+Patient: Work and family responsibilities.
+
+Doctor: Are you having trouble sleeping?
+
+Patient: Yes, I wake up several times during the night.
+
+Doctor: Any chest pain or shortness of breath?
+
+Patient: Sometimes my heart races when I'm anxious.
+
+Doctor: Have you experienced this before?
+
+Patient: Not this often.
