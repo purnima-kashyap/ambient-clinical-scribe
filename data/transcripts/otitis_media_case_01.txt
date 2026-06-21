@@ -1,0 +1,19 @@
+Doctor: What seems to be the problem today?
+
+Patient: I've had severe pain in my right ear for the last three days.
+
+Doctor: Any fever?
+
+Patient: Yes, I had a mild fever yesterday.
+
+Doctor: Any discharge from the ear?
+
+Patient: No discharge, but my hearing feels slightly muffled.
+
+Doctor: Have you had a recent cold?
+
+Patient: Yes, about a week ago.
+
+Doctor: Have you taken anything for the pain?
+
+Patient: Only paracetamol.
