@@ -1,0 +1,11 @@
+Subjective:
+Patient reports wheezing and shortness of breath.
+
+Objective:
+Known history of asthma.
+
+Assessment:
+Asthma Exacerbation.
+
+Plan:
+Recommend inhaler use, avoid triggers, and urgent medical evaluation if symptoms worsen.

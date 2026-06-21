@@ -1,0 +1,15 @@
+Doctor: What symptoms are you experiencing?
+
+Patient: Burning while urinating and frequent urination.
+
+Doctor: Since when?
+
+Patient: Four days.
+
+Doctor: Any fever?
+
+Patient: Slight fever yesterday.
+
+Doctor: Any blood in urine?
+
+Patient: No.

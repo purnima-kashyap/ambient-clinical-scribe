@@ -1,0 +1,15 @@
+Doctor: What brings you in today?
+
+Patient: I'm wheezing and short of breath.
+
+Doctor: When did it begin?
+
+Patient: Since last night.
+
+Doctor: Do you have asthma?
+
+Patient: Yes.
+
+Doctor: Did your inhaler help?
+
+Patient: Only a little.
