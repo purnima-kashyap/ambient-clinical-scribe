@@ -1,0 +1,19 @@
+Doctor: What brings you in today?
+
+Patient: I've been sneezing a lot and my nose has been running for the past five days.
+
+Doctor: Any fever?
+
+Patient: No fever.
+
+Doctor: Do your eyes itch?
+
+Patient: Yes, my eyes are very itchy and watery.
+
+Doctor: Have you noticed if it gets worse outdoors?
+
+Patient: Yes, especially in the mornings.
+
+Doctor: Any medication?
+
+Patient: I tried an antihistamine yesterday.
