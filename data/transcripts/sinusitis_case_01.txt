@@ -1,0 +1,19 @@
+Doctor: What brings you in today?
+
+Patient: I've had nasal congestion and pressure around my cheeks for about a week.
+
+Doctor: Do you have a fever?
+
+Patient: A mild fever started two days ago.
+
+Doctor: Any nasal discharge?
+
+Patient: Yes, thick yellow mucus.
+
+Doctor: Any headaches?
+
+Patient: Yes, mostly around my forehead.
+
+Doctor: Have you taken anything?
+
+Patient: Just over-the-counter pain medicine.
