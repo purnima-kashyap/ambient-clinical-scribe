@@ -1,0 +1,19 @@
+Doctor: What brings you in today?
+
+Patient: I've had diarrhea and vomiting since yesterday.
+
+Doctor: Any fever?
+
+Patient: Yes, around 100°F.
+
+Doctor: Are you able to drink fluids?
+
+Patient: Small amounts.
+
+Doctor: Any blood in the stool?
+
+Patient: No.
+
+Doctor: Anyone else at home sick?
+
+Patient: Yes, my son had similar symptoms.
