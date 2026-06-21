@@ -1,0 +1,19 @@
+Doctor: What brings you in today?
+
+Patient: I haven't been sleeping well for the last three weeks.
+
+Doctor: How many hours do you sleep?
+
+Patient: Around four hours.
+
+Doctor: Do you wake up during the night?
+
+Patient: Yes, several times.
+
+Doctor: Do you consume caffeine late in the day?
+
+Patient: Yes, I usually drink coffee in the evening.
+
+Doctor: Any recent stress?
+
+Patient: Yes, work has been stressful.
