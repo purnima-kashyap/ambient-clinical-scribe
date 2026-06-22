@@ -1,4 +1,3 @@
-import json
 from pydantic import BaseModel, Field
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
@@ -12,7 +11,7 @@ class SOAPNote(BaseModel):
     plan: str = Field(description="Treatment plan, medications prescribed, tests ordered, and follow-up instructions.")
 
 # Note: Added explicit JSON formatting instructions for the local model
-system_prompt = """
+_SYSTEM_PROMPT= """
 You are an expert AI clinical scribe. Your task is to convert raw medical consultation transcripts into highly structured, professional SOAP notes.
 
 CRITICAL RULES:
@@ -43,35 +42,70 @@ Output JSON:
   "plan": "Prescribed Sumatriptan 50mg PRN at onset of headache. Patient instructed to maintain a daily headache diary."
 }}
 """
+# Maximum transcript length 
+_MAX_TRANSCRIPT_LENGTH = 10_000
 
-async def generate_soap_note(transcript: str) -> dict:
+class SOAPNoteGenerator:
     """
-    Takes a raw transcript and uses a local LLM to generate a structured SOAP note.
+    Reusable generator for clinical SOAP notes from raw consultation transcripts.
+    The LLM chain is built once on initialization and reused across all calls,
+    avoiding the overhead of recreating it on every request.
     """
-    try:
-        # Connect to the local Ollama instance running in the background.
-        # format="json" strictly forces the model to only output JSON data.
-        llm = ChatOllama(model="llama3", temperature=0, format="json")
-        
-        # We use JsonOutputParser to guarantee the output maps to our Pydantic model
+ 
+    def __init__(self, model: str = "llama3.1"):
+        """
+        Args:
+            model: Ollama model name to use. Defaults to llama3.1 (llama3 is deprecated).
+        """
+        llm = ChatOllama(
+            model=model,
+            temperature=0,
+            format="json",
+            timeout=60,       
+            num_predict=1024, # cap output tokens to avoid runaway generation
+        )
+ 
         parser = JsonOutputParser(pydantic_object=SOAPNote)
-        
-        # Create the prompt template, injecting the schema format instructions
+ 
         prompt = ChatPromptTemplate.from_messages([
-            ("system", system_prompt),
+            ("system", _SYSTEM_PROMPT),
             ("human", "Format Instructions: \n{format_instructions}\n\nPlease generate a SOAP note from this transcript:\n\n{transcript}")
         ])
-        
-        # Chain the prompt, the local LLM, and the parser together
-        chain = prompt | llm | parser
-        
-        # Execute the chain asynchronously
-        result = await chain.ainvoke({
-            "transcript": transcript,
-            "format_instructions": parser.get_format_instructions()
-        })
-        
-        return result
-        
-    except Exception as e:
-        raise RuntimeError(f"Local LLM Generation failed: {str(e)}")
+ 
+        # Build chain once; reused for every generate() call
+        self._chain = prompt | llm | parser
+        self._format_instructions = parser.get_format_instructions()
+ 
+    async def generate(self, transcript: str) -> SOAPNote:
+        """
+        Takes a raw transcript and returns a validated SOAPNote object.
+ 
+        Args:
+            transcript: Raw doctor-patient consultation text.
+ 
+        Returns:
+            SOAPNote: Pydantic model with subjective, objective, assessment, plan fields.
+ 
+        Raises:
+            ValueError: If the transcript is empty or exceeds the maximum length.
+            RuntimeError: If the LLM chain fails for any reason.
+        """
+        # --- Input validation ---
+        if not transcript or not transcript.strip():
+            raise ValueError("Transcript cannot be empty.")
+        if len(transcript) > _MAX_TRANSCRIPT_LENGTH:
+            raise ValueError(
+                f"Transcript length ({len(transcript)} chars) exceeds the "
+                f"maximum allowed length of {_MAX_TRANSCRIPT_LENGTH} chars."
+            )
+ 
+        try:
+            result: dict = await self._chain.ainvoke({
+                "transcript": transcript,
+                "format_instructions": self._format_instructions,
+            })
+            # Validate the LLM output against the Pydantic schema before returning
+            return SOAPNote(**result)
+ 
+        except Exception as e:
+            raise RuntimeError(f"Local LLM generation failed: {str(e)}") from e
