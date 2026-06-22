@@ -1,0 +1,19 @@
+Doctor: What seems to be the problem?
+
+Patient: My right knee has been hurting for the past week.
+
+Doctor: Did you injure it?
+
+Patient: I twisted it while climbing stairs.
+
+Doctor: Is there any swelling?
+
+Patient: A little swelling around the knee.
+
+Doctor: Can you walk?
+
+Patient: Yes, but it hurts.
+
+Doctor: Have you applied ice?
+
+Patient: Yes, twice yesterday.

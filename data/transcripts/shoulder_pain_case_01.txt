@@ -1,0 +1,19 @@
+Doctor: What brings you in today?
+
+Patient: My left shoulder has been painful for about five days.
+
+Doctor: Did you lift anything heavy?
+
+Patient: Yes, I moved some furniture.
+
+Doctor: Can you raise your arm?
+
+Patient: It hurts when I lift it above my head.
+
+Doctor: Any numbness?
+
+Patient: No.
+
+Doctor: Have you taken pain medication?
+
+Patient: Just paracetamol.

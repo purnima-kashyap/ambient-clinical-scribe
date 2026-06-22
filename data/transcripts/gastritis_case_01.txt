@@ -1,0 +1,19 @@
+Doctor: What symptoms are you having?
+
+Patient: I've had a burning pain in my upper stomach for four days.
+
+Doctor: Does it get worse after eating?
+
+Patient: Sometimes after spicy food.
+
+Doctor: Any vomiting?
+
+Patient: No vomiting, just nausea.
+
+Doctor: Any black stools?
+
+Patient: No.
+
+Doctor: Have you taken painkillers recently?
+
+Patient: Yes, I've been taking ibuprofen for my back pain.

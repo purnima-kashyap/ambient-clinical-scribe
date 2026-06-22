@@ -1,0 +1,19 @@
+Doctor: What symptoms are you experiencing?
+
+Patient: I've had neck pain and stiffness for the past month.
+
+Doctor: Does the pain travel to your arms?
+
+Patient: Sometimes it goes into my right shoulder.
+
+Doctor: Any numbness?
+
+Patient: Occasionally in my fingers.
+
+Doctor: Does movement make it worse?
+
+Patient: Yes, especially looking down for long periods.
+
+Doctor: Have you tried anything?
+
+Patient: I've been using a heating pad.
