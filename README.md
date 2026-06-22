@@ -26,3 +26,39 @@ Implemented the speaker diarization component to distinguish between different s
 
 GET `/diarize`
 Returns speaker diarization results.
+
+## Audio Transcription Module
+
+This module uses Faster-Whisper to transcribe audio files and extract segment-level timestamps required for downstream speaker diarization.
+
+Use Case:
+This module serves as the Automatic Speech Recognition (ASR) component of the AI Medical Scribe pipeline and provides timestamped transcripts for speaker diarization and SOAP note generation.
+
+Features: 
+Speech-to-text transcription using Faster-Whisper
+Segment-level timestamps
+Automatic language detection
+Medical-context prompt for improved accuracy
+Asynchronous execution using asyncio.to_thread()
+
+Install the required packages:
+pip install faster-whisper
+pip install python-multipart 
+
+pip install transformers torch accelerate
+
+## AI Clinical SOAP Note Generator
+An AI-powered clinical scribe that converts raw doctor-patient conversation transcripts into structured SOAP (Subjective, Objective, Assessment, Plan) notes using LangChain, Ollama, and Llama 3.
+
+Features:
+Generates professional SOAP notes from medical transcripts.
+Uses a local Llama 3 model through Ollama.
+Structured JSON output with Pydantic validation.
+Built with LangChain and asynchronous processing.
+Prevents hallucinations by extracting only explicitly stated medical information.
+
+Installation
+pip install langchain langchain-core langchain-ollama pydantic
+
+Purpose
+This project demonstrates how local large language models can be used to automate clinical documentation and improve healthcare workflow efficiency.
