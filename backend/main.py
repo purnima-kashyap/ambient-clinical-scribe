@@ -2,12 +2,14 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from pydantic import BaseModel
 from backend.diarization.speaker_diarizer import diarize_audio
 from backend.asr.asr_service import transcribe_audio_with_timestamps 
-from backend.llm.llm_service import generate_soap_note
+# from backend.llm.llm_service import generate_soap_note
+from backend.llm.llm_service import SOAPNoteGenerator
 import shutil
 import os
 
 app = FastAPI()
 
+soap_generator = SOAPNoteGenerator()
 @app.get("/")
 def home():
     return {"message": "Healthcare AI Scribe Running"}
@@ -47,7 +49,8 @@ async def handle_soap_generation(request: TranscriptRequest):
     """
     try:
         # Pass the string straight to the new LangChain service
-        soap_result = await generate_soap_note(request.transcript)
+        # soap_result = await generate_soap_note(request.transcript)
+        soap_result = await soap_generator.generate(request.transcript)
         return soap_result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
