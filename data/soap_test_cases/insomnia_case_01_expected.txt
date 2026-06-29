@@ -1,11 +1,6 @@
-Subjective:
-Patient reports difficulty falling asleep, frequent nighttime awakenings, and daytime fatigue.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Insomnia.
-
-Plan:
-Recommend sleep hygiene, limiting caffeine intake, stress management, and follow-up if symptoms persist.
+{
+"subjective": "Patient reports difficulty falling asleep and frequent nighttime awakenings for the past three weeks, averaging approximately four hours of sleep per night. Reports daytime fatigue and difficulty concentrating. Admits to drinking coffee in the evening and experiencing increased work-related stress. Denies using sleep medications or alcohol to aid sleep.",
+"objective": "Blood pressure 118/76 mmHg. Pulse 74 bpm. Temperature normal. Physical examination is unremarkable.",
+"assessment": "Insomnia, likely related to poor sleep hygiene, evening caffeine intake, and work-related stress.",
+"plan": "Recommend improving sleep hygiene, avoiding caffeine after the afternoon, limiting screen time before bedtime, practicing stress management and relaxation techniques, and maintaining a consistent sleep schedule. Schedule follow-up if symptoms persist despite lifestyle modifications."
+}

@@ -1,15 +1,39 @@
-Doctor: What symptoms are bothering you?
+Doctor: Good morning. What symptoms are bothering you today?
 
-Patient: Burning sensation in my chest after meals.
+Patient: I've been having a burning sensation in my chest after meals.
 
-Doctor: Any sour taste?
+Doctor: How long have you been experiencing this?
 
-Patient: Yes.
+Patient: It's been happening for about a month.
 
-Doctor: How long has this been happening?
+Doctor: Do you notice a sour or bitter taste in your mouth?
 
-Patient: About a month.
+Patient: Yes, especially after eating or when I burp.
 
-Doctor: Does it worsen when lying down?
+Doctor: Does the burning get worse when you lie down or bend over?
 
-Patient: Yes.
+Patient: Yes, it's much worse when I lie down after dinner.
+
+Doctor: Do you have any difficulty swallowing or pain while swallowing?
+
+Patient: No, swallowing is normal.
+
+Doctor: Have you experienced nausea, vomiting, or weight loss?
+
+Patient: No, none of those.
+
+Doctor: Do you drink coffee, eat spicy foods, or have late-night meals?
+
+Patient: Yes, I drink coffee every day and usually eat dinner quite late.
+
+Doctor: Have you taken anything to relieve the symptoms?
+
+Patient: I tried an over-the-counter antacid, and it helped for a short time.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your blood pressure is 118/76 mmHg, pulse is 78 beats per minute, and your temperature is normal. Your abdominal examination is unremarkable with no significant tenderness.
+
+Doctor: Your symptoms are most consistent with gastroesophageal reflux disease, or GERD. I'll prescribe medication to reduce stomach acid. I also recommend avoiding spicy and fatty foods, reducing caffeine, avoiding late-night meals, and remaining upright for at least two hours after eating.
+
+Patient: Thank you, doctor. I'll make those changes.

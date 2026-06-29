@@ -1,19 +1,48 @@
 Doctor: How have you been feeling lately?
+Doctor: Good morning. What brings you in today?
 
-Patient: I've been feeling constantly worried for the past month.
+Patient: I've been feeling constantly worried and anxious for about the past month.
 
-Doctor: What are you worried about?
+Doctor: Can you tell me what you've been worrying about?
 
-Patient: Work and family responsibilities.
+Patient: Mostly work deadlines and family responsibilities. I feel like I can't stop thinking about everything that could go wrong.
+
+Doctor: How has this been affecting your daily life?
+
+Patient: I'm finding it difficult to concentrate at work, and I feel tense most of the day.
 
 Doctor: Are you having trouble sleeping?
 
-Patient: Yes, I wake up several times during the night.
+Patient: Yes. I take a long time to fall asleep, and I wake up several times during the night.
 
-Doctor: Any chest pain or shortness of breath?
+Doctor: How is your energy during the day?
 
-Patient: Sometimes my heart races when I'm anxious.
+Patient: I feel tired and exhausted because I'm not sleeping well.
 
-Doctor: Have you experienced this before?
+Doctor: Have you noticed any physical symptoms when you feel anxious?
 
-Patient: Not this often.
+Patient: Yes. Sometimes my heart starts racing, I feel sweaty, and I get a tight feeling in my chest.
+
+Doctor: Do you experience shortness of breath, dizziness, or fainting?
+
+Patient: I sometimes feel slightly short of breath when I'm very anxious, but I've never fainted.
+
+Doctor: Have you experienced anxiety like this before?
+
+Patient: I've felt stressed before, but never this frequently or this intensely.
+
+Doctor: Do you have any medical conditions or take any regular medications?
+
+Patient: No, I'm generally healthy and I'm not taking any regular medicines.
+
+Doctor: Do you drink alcohol, smoke, or consume a lot of caffeine?
+
+Patient: I drink two or three cups of coffee every day, but I don't smoke or drink alcohol.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your blood pressure is 122/78 mmHg, pulse is 92 beats per minute, temperature is normal, and your oxygen saturation is 99%. Your physical examination is otherwise unremarkable.
+
+Doctor: Based on your symptoms, this appears to be anxiety related to ongoing stress. I recommend practicing stress-management techniques, maintaining good sleep habits, reducing caffeine intake, and engaging in regular physical activity. I would also recommend speaking with a mental health professional for counseling. If your symptoms worsen or you experience persistent chest pain, severe panic attacks, or thoughts of harming yourself, seek immediate medical attention.
+
+Patient: Thank you, doctor. I'll follow your advice.

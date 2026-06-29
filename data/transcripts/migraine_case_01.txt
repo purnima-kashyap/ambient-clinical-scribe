@@ -1,15 +1,39 @@
-Doctor: What brings you in today?
+Doctor: Good morning. What brings you in today?
 
-Patient: I have severe headaches with nausea.
+Patient: I've been having severe headaches with nausea.
 
-Doctor: When did they start?
+Doctor: When did these headaches begin?
 
 Patient: About two days ago.
 
-Doctor: Is light making it worse?
+Doctor: Where is the headache located?
 
-Patient: Yes, bright lights make it unbearable.
+Patient: It's mainly on the left side of my head and feels like a throbbing pain.
+
+Doctor: On a scale of 1 to 10, how severe is the pain?
+
+Patient: Around an 8 out of 10.
+
+Doctor: Does bright light or loud noise make the headache worse?
+
+Patient: Yes, bright lights make it unbearable, and loud noises also make it worse.
 
 Doctor: Have you had migraines before?
 
-Patient: Yes, several times.
+Patient: Yes, I've had similar headaches several times over the past few years.
+
+Doctor: Have you experienced any fever, weakness, numbness, or blurred vision?
+
+Patient: No, none of those symptoms.
+
+Doctor: Have you taken anything for the headache?
+
+Patient: I took paracetamol, but it only helped a little.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your blood pressure is 118/78 mmHg, pulse is 74 beats per minute, and your temperature is normal. Your neurological examination is normal with no focal neurological deficits.
+
+Doctor: This appears to be a migraine without aura. I'll prescribe a migraine medication and recommend resting in a quiet, dark room, staying hydrated, and avoiding known triggers. If the headache becomes unusually severe or is associated with weakness, confusion, or persistent vomiting, seek immediate medical attention.
+
+Patient: Thank you, doctor. I'll follow your advice.
