@@ -47,7 +47,7 @@ pip install python-multipart
 
 pip install transformers torch accelerate
 
-## AI Clinical SOAP Note Generator
+## SOAP Note Generator
 An AI-powered clinical scribe that converts raw doctor-patient conversation transcripts into structured SOAP (Subjective, Objective, Assessment, Plan) notes using LangChain, Ollama, and Llama 3.
 
 Features:
