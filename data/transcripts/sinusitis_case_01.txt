@@ -1,19 +1,39 @@
-Doctor: What brings you in today?
+Doctor: Good morning. What brings you in today?
 
 Patient: I've had nasal congestion and pressure around my cheeks for about a week.
 
-Doctor: Do you have a fever?
+Doctor: Is the facial pressure constant or does it get worse when you bend forward?
 
-Patient: A mild fever started two days ago.
+Patient: It gets worse when I bend forward.
 
-Doctor: Any nasal discharge?
+Doctor: Have you had a fever?
 
-Patient: Yes, thick yellow mucus.
+Patient: A mild fever started about two days ago.
 
-Doctor: Any headaches?
+Doctor: Have you noticed any nasal discharge?
 
-Patient: Yes, mostly around my forehead.
+Patient: Yes, I've been having thick yellow mucus.
 
-Doctor: Have you taken anything?
+Doctor: Are you experiencing headaches?
 
-Patient: Just over-the-counter pain medicine.
+Patient: Yes, mostly around my forehead and between my eyes.
+
+Doctor: Have you had a recent cold or upper respiratory infection?
+
+Patient: Yes, I had a cold about a week before these symptoms started.
+
+Doctor: Have you had any cough or sore throat?
+
+Patient: Just a mild cough from the postnasal drip.
+
+Doctor: Have you taken anything for your symptoms?
+
+Patient: I've only taken over-the-counter pain medicine, and it helped a little.
+
+Doctor: Let me examine you.
+
+Doctor: Your temperature is 100.1°F, blood pressure is 118/74 mmHg, and pulse is 80 beats per minute. On examination, there is tenderness over the maxillary and frontal sinuses with nasal congestion and thick yellow nasal discharge. Your throat is mildly irritated due to postnasal drip, and your lungs are clear.
+
+Doctor: Your symptoms are consistent with acute sinusitis. I recommend staying well hydrated, using saline nasal spray, steam inhalation, and continuing pain relief as needed. If your symptoms persist beyond 10 days or worsen, you may require antibiotic treatment.
+
+Patient: Thank you, doctor. I'll follow your advice.

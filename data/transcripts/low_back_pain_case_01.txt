@@ -1,15 +1,39 @@
-Doctor: What brings you here today?
+Doctor: Good morning. What brings you here today?
 
-Patient: I have pain in my lower back.
+Patient: I've been having pain in my lower back.
 
-Doctor: How long?
+Doctor: How long have you had the pain?
 
-Patient: Five days.
+Patient: About five days.
 
-Doctor: Did you lift anything heavy?
+Doctor: Did anything happen before the pain started?
 
-Patient: Yes, while moving furniture.
+Patient: Yes, I was moving heavy furniture at home and felt pain afterward.
 
-Doctor: Any numbness?
+Doctor: Can you describe the pain? Is it sharp or dull?
+
+Patient: It's a dull aching pain that gets worse when I bend or lift something.
+
+Doctor: Does the pain travel down your legs?
+
+Patient: No, it stays in my lower back.
+
+Doctor: Have you experienced any numbness, tingling, or weakness in your legs?
+
+Patient: No, none of those symptoms.
+
+Doctor: Have you had any problems with bowel or bladder control?
 
 Patient: No.
+
+Doctor: Have you taken anything for the pain?
+
+Patient: I've been taking over-the-counter pain medication and resting, which helps a little.
+
+Doctor: Let me examine your back.
+
+Doctor: Your blood pressure is 120/76 mmHg, pulse is 78 beats per minute, and your temperature is normal. On examination, there is tenderness over the lower lumbar muscles with mild limitation of movement due to pain. Straight leg raise test is negative, and there are no neurological deficits.
+
+Doctor: This appears to be mechanical low back pain caused by a muscle strain from heavy lifting. I recommend rest, avoiding heavy lifting for a few days, gentle stretching exercises, and continuing pain medication as needed. If the pain worsens, spreads to your legs, or you develop numbness or weakness, please return immediately.
+
+Patient: Thank you, doctor. I'll follow your advice.

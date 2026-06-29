@@ -1,15 +1,34 @@
-Doctor: What brings you in today?
+Doctor: Good morning. What brings you in today?
 
-Patient: I have been feeling very thirsty and tired lately.
+Patient: I've been feeling very thirsty and tired lately.
 
-Doctor: How long has this been happening?
+Doctor: How long have you been experiencing these symptoms?
 
-Patient: Around two months.
+Patient: It's been about two months now.
 
-Doctor: Any frequent urination?
+Doctor: Have you noticed that you're urinating more frequently?
 
-Patient: Yes, especially during the night.
+Patient: Yes, especially during the night. I wake up two or three times to use the bathroom.
 
-Doctor: Do you have a history of diabetes?
+Doctor: Have you experienced any recent weight loss or blurred vision?
 
-Patient: My father has Type 2 diabetes.
+Patient: I've lost a few kilograms over the last couple of months, and my vision gets a little blurry sometimes.
+
+Doctor: Do you have a family history of diabetes?
+
+Patient: Yes, my father has Type 2 diabetes.
+
+Doctor: Are you currently taking any medications?
+
+Patient: No, I'm not taking any regular medications.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your blood pressure is 128/82 mmHg, pulse is 84 beats per minute, and your temperature is normal. Your random blood glucose today is elevated at 248 mg/dL.
+
+Doctor: Based on your symptoms and blood sugar reading, this is highly suggestive of Type 2 diabetes mellitus. I'll order fasting blood glucose and HbA1c tests to confirm the diagnosis.
+
+Doctor: In the meantime, begin reducing your sugar intake, follow a balanced diet, increase physical activity, and schedule a follow-up visit once your test results are available.
+
+Patient: Thank you, doctor. I'll get the tests done as soon as possible.
+

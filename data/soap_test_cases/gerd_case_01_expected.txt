@@ -1,11 +1,6 @@
-Subjective:
-Patient reports heartburn after meals with sour taste.
-
-Objective:
-Symptoms worsen when lying down.
-
-Assessment:
-Likely Gastroesophageal Reflux Disease (GERD).
-
-Plan:
-Recommend dietary changes, avoid late meals, and consider antacid therapy.
+{
+"subjective": "Patient reports a burning sensation in the chest after meals for the past month, associated with a sour taste in the mouth. Symptoms worsen when lying down after eating. Denies difficulty swallowing, nausea, vomiting, or weight loss. Reports daily coffee consumption, late-night meals, and temporary relief with an over-the-counter antacid.",
+"objective": "Blood pressure 118/76 mmHg. Pulse 78 bpm. Temperature normal. Abdominal examination is unremarkable with no significant tenderness.",
+"assessment": "Gastroesophageal reflux disease (GERD).",
+"plan": "Prescribe acid-suppressive therapy with a proton pump inhibitor. Advise avoiding spicy and fatty foods, reducing caffeine intake, avoiding late-night meals, remaining upright for at least two hours after eating, and following up if symptoms persist or worsen."
+}

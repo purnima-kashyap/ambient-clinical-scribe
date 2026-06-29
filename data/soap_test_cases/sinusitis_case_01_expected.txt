@@ -1,11 +1,6 @@
-Subjective:
-Patient reports nasal congestion, facial pressure, yellow nasal discharge, mild fever, and frontal headache for one week.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Acute sinusitis.
-
-Plan:
-Recommend hydration, saline nasal spray, steam inhalation, and evaluation for antibiotics if symptoms persist or worsen.
+{
+"subjective": "Patient reports nasal congestion, facial pressure over the cheeks, frontal headache, and thick yellow nasal discharge for the past week. Mild fever began two days ago. Reports facial pain worsens when bending forward and has a mild cough due to postnasal drip following a recent upper respiratory infection. Reports partial relief with over-the-counter pain medication.",
+"objective": "Temperature 100.1°F. Blood pressure 118/74 mmHg. Pulse 80 bpm. Physical examination reveals tenderness over the maxillary and frontal sinuses, nasal congestion with thick yellow nasal discharge, mild throat irritation from postnasal drip, and clear lung auscultation.",
+"assessment": "Acute sinusitis, likely following a recent upper respiratory infection.",
+"plan": "Recommend adequate hydration, saline nasal spray, steam inhalation, and analgesics as needed for symptom relief. Advise monitoring symptoms and returning for evaluation if symptoms persist beyond 10 days, worsen, or if high fever or significant facial swelling develops, as antibiotic therapy may be required."
+}
