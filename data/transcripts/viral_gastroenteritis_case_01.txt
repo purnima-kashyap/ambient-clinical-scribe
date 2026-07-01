@@ -1,19 +1,39 @@
-Doctor: What brings you in today?
+Doctor: Good morning. What brings you in today?
 
 Patient: I've had diarrhea and vomiting since yesterday.
 
-Doctor: Any fever?
+Doctor: How many times have you vomited or had diarrhea?
 
-Patient: Yes, around 100°F.
+Patient: I've vomited about four times and had diarrhea six times since yesterday.
 
-Doctor: Are you able to drink fluids?
+Doctor: Have you had any fever?
 
-Patient: Small amounts.
+Patient: Yes, it was around 100°F yesterday evening.
 
-Doctor: Any blood in the stool?
+Doctor: Are you able to keep fluids down?
 
-Patient: No.
+Patient: Only small amounts. I feel nauseous if I drink too much.
 
-Doctor: Anyone else at home sick?
+Doctor: Have you noticed any blood in your stool or vomit?
 
-Patient: Yes, my son had similar symptoms.
+Patient: No, neither.
+
+Doctor: Are you having any abdominal pain or cramps?
+
+Patient: Yes, I have mild stomach cramps before each episode of diarrhea.
+
+Doctor: Has anyone else at home been sick?
+
+Patient: Yes, my son had similar symptoms a couple of days ago.
+
+Doctor: Have you eaten anything unusual recently?
+
+Patient: We ate at a restaurant two nights ago, and my son became sick the next day.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your temperature is 100.1°F, blood pressure is 110/70 mmHg, and pulse is 96 beats per minute. You appear mildly dehydrated, but your abdomen is soft with mild generalized tenderness and no signs of guarding or rebound tenderness.
+
+Doctor: This is most consistent with acute viral gastroenteritis. I'll recommend oral rehydration solution, plenty of clear fluids, light meals as tolerated, and medication for nausea if needed. If you develop persistent vomiting, bloody diarrhea, high fever, or signs of severe dehydration, return immediately or visit the emergency department.
+
+Patient: Thank you, doctor. I'll follow your advice.

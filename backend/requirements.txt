@@ -1,0 +1,58 @@
+# ==========================
+# Ambient Clinical AI
+# Requirements
+# ==========================
+
+# FastAPI Backend
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+
+# LLM (Ollama)
+ollama
+
+# Speech-to-Text
+openai-whisper
+
+# Audio Processing
+soundfile
+librosa
+pydub
+
+# PyTorch
+torch
+torchvision
+torchaudio
+
+# Embeddings & RAG
+sentence-transformers
+faiss-cpu
+transformers
+accelerate
+
+# Data Processing
+numpy
+pandas
+scikit-learn
+openpyxl
+
+# LangChain 
+langchain
+langchain-community
+
+# Environment Variables
+python-dotenv
+
+# HTTP Requests
+requests
+httpx
+
+# JSON Serialization
+orjson
+
+# Logging
+loguru
+
+# Progress Bars
+tqdm

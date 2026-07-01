@@ -1,19 +1,35 @@
-Doctor: What seems to be the problem?
+Doctor: Good morning. What seems to be the problem today?
 
 Patient: My right knee has been hurting for the past week.
 
-Doctor: Did you injure it?
+Doctor: Can you tell me how the injury happened?
 
-Patient: I twisted it while climbing stairs.
+Patient: I twisted my knee while climbing the stairs last week.
 
-Doctor: Is there any swelling?
+Doctor: Did you hear a popping sound or feel the knee give way?
 
-Patient: A little swelling around the knee.
+Patient: No, I just felt a sharp pain when I twisted it.
 
-Doctor: Can you walk?
+Doctor: Is there any swelling or bruising?
 
-Patient: Yes, but it hurts.
+Patient: There's a little swelling around the knee, but I haven't noticed any bruising.
 
-Doctor: Have you applied ice?
+Doctor: Are you able to walk on it?
 
-Patient: Yes, twice yesterday.
+Patient: Yes, I can walk, but it hurts, especially when climbing stairs.
+
+Doctor: Have you done anything to help the pain?
+
+Patient: I applied ice twice yesterday and tried to rest as much as possible.
+
+Doctor: Have you taken any pain medication?
+
+Patient: I took ibuprofen once, and it helped a little.
+
+Doctor: Let me examine your knee.
+
+Doctor: Your blood pressure is 122/78 mmHg, pulse is 76 beats per minute, and your temperature is normal. On examination, there is mild swelling around the right knee with tenderness along the medial aspect. Range of motion is slightly limited due to pain, but the knee is stable.
+
+Doctor: This appears to be a mild knee strain. I recommend continuing rest, ice application, compression with an elastic bandage, and keeping the leg elevated. You may continue taking pain medication if needed. If the pain or swelling worsens, or if you're unable to bear weight, please return for further evaluation.
+
+Patient: Thank you, doctor. I'll follow your advice.

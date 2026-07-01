@@ -1,11 +1,6 @@
-Subjective:
-Patient reports diarrhea, vomiting, low-grade fever, and recent sick contact.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Acute viral gastroenteritis.
-
-Plan:
-Recommend oral rehydration, rest, bland diet, and seek care if symptoms worsen or dehydration develops.
+{
+"subjective": "Patient reports diarrhea and vomiting since yesterday, with approximately six episodes of diarrhea and four episodes of vomiting. Associated symptoms include mild abdominal cramps and a fever of approximately 100°F. Able to tolerate only small amounts of fluids due to nausea. Denies blood in stool or vomit. Reports that the patient's son recently experienced similar symptoms after eating at the same restaurant.",
+"objective": "Temperature 100.1°F. Blood pressure 110/70 mmHg. Pulse 96 bpm. Patient appears mildly dehydrated. Physical examination reveals a soft abdomen with mild generalized tenderness and no guarding or rebound tenderness.",
+"assessment": "Acute viral gastroenteritis with mild dehydration.",
+"plan": "Recommend oral rehydration solution, increased fluid intake, light meals as tolerated, and antiemetic medication if required. Monitor for worsening symptoms and advise immediate medical evaluation if persistent vomiting, bloody diarrhea, high fever, severe abdominal pain, or signs of significant dehydration develop."
+}
