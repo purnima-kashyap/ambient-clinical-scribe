@@ -2,7 +2,7 @@ import faiss
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 
-from config import ICD_DATASET_PATH, VECTOR_DB_PATH
+from .config import ICD_DATASET_PATH, VECTOR_DB_PATH
 
 
 def load_faiss_index():
