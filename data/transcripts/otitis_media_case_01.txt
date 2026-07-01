@@ -1,19 +1,35 @@
-Doctor: What seems to be the problem today?
+Doctor: Good morning. What seems to be the problem today?
 
 Patient: I've had severe pain in my right ear for the last three days.
 
-Doctor: Any fever?
+Doctor: Can you describe the pain? Is it constant or does it come and go?
+
+Patient: It's a constant throbbing pain that gets worse at night.
+
+Doctor: Have you had any fever?
 
 Patient: Yes, I had a mild fever yesterday.
 
-Doctor: Any discharge from the ear?
+Doctor: Have you noticed any discharge from your ear?
 
 Patient: No discharge, but my hearing feels slightly muffled.
 
-Doctor: Have you had a recent cold?
+Doctor: Have you recently had a cold or sore throat?
 
-Patient: Yes, about a week ago.
+Patient: Yes, I had a cold about a week ago.
+
+Doctor: Do you have any dizziness or ringing in your ear?
+
+Patient: No, just the pain and muffled hearing.
 
 Doctor: Have you taken anything for the pain?
 
-Patient: Only paracetamol.
+Patient: Only paracetamol, which helped a little.
+
+Doctor: Let me examine your ear.
+
+Doctor: Your temperature is 100.2°F, blood pressure is 120/78 mmHg, and pulse is 82 beats per minute. On examination, the right eardrum appears red and bulging with no visible ear discharge. The left ear appears normal.
+
+Doctor: This is consistent with acute otitis media, likely following your recent upper respiratory infection. I'll prescribe appropriate medication for the infection and pain relief. Complete the full course of treatment, avoid getting water into the affected ear, and return if your symptoms worsen or your hearing does not improve.
+
+Patient: Thank you, doctor. I'll follow your instructions.

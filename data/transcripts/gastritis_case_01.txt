@@ -1,19 +1,35 @@
-Doctor: What symptoms are you having?
+Doctor: Good morning. What symptoms are you having today?
 
-Patient: I've had a burning pain in my upper stomach for four days.
+Patient: I've had a burning pain in my upper stomach for the past four days.
 
-Doctor: Does it get worse after eating?
+Doctor: Can you describe the pain? Does it come and go or is it constant?
 
-Patient: Sometimes after spicy food.
+Patient: It's mostly a burning sensation that comes and goes, but it gets worse after eating spicy food.
 
-Doctor: Any vomiting?
+Doctor: Have you experienced any nausea or vomiting?
 
-Patient: No vomiting, just nausea.
+Patient: I've been feeling nauseous, but I haven't vomited.
 
-Doctor: Any black stools?
+Doctor: Any black stools or blood in your stool?
 
-Patient: No.
+Patient: No, none.
 
-Doctor: Have you taken painkillers recently?
+Doctor: Have you noticed any loss of appetite or weight loss?
 
-Patient: Yes, I've been taking ibuprofen for my back pain.
+Patient: My appetite has been a little lower because eating sometimes makes the pain worse, but I haven't lost any weight.
+
+Doctor: Have you taken any medications recently?
+
+Patient: Yes, I've been taking ibuprofen for my back pain over the past week.
+
+Doctor: Do you drink alcohol or smoke?
+
+Patient: I occasionally drink alcohol, but I don't smoke.
+
+Doctor: Let me examine you.
+
+Doctor: Your blood pressure is 120/78 mmHg, pulse is 82 beats per minute, and your temperature is normal. On examination, there is mild tenderness in the upper abdomen without guarding or rebound tenderness.
+
+Doctor: This appears to be acute gastritis, likely related to recent NSAID use. I'll prescribe a proton pump inhibitor, and I recommend avoiding ibuprofen, spicy foods, alcohol, and excessive caffeine until your symptoms improve.
+
+Patient: Thank you, doctor. I'll follow the recommendations.

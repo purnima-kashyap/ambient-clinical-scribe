@@ -1,15 +1,35 @@
-Doctor: What brings you in today?
+Doctor: Good morning. What brings you in today?
 
 Patient: I've been having headaches and feeling dizzy for the last three weeks.
 
-Doctor: Have you checked your blood pressure?
+Doctor: How often do these symptoms occur?
 
-Patient: Yes, it was around 150 over 95 yesterday.
+Patient: Almost every day, especially in the evenings.
 
-Doctor: Any chest pain or shortness of breath?
+Doctor: Have you checked your blood pressure recently?
 
-Patient: No, just headaches and dizziness.
+Patient: Yes, I checked it at a pharmacy yesterday, and it was around 150 over 95.
+
+Doctor: Have you experienced any chest pain, shortness of breath, or blurred vision?
+
+Patient: No, just the headaches and dizziness.
 
 Doctor: Does anyone in your family have high blood pressure?
 
 Patient: Yes, my mother has hypertension.
+
+Doctor: Do you smoke or drink alcohol?
+
+Patient: I don't smoke, but I occasionally drink alcohol.
+
+Doctor: How is your diet? Do you eat a lot of salty or processed foods?
+
+Patient: Yes, I probably eat more salty snacks and fast food than I should.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your blood pressure today is 152/96 mmHg, pulse is 82 beats per minute, and your temperature is normal. Heart and lung examinations are unremarkable.
+
+Doctor: Your blood pressure is elevated, and your symptoms are consistent with hypertension. I'll recommend regular blood pressure monitoring and order some blood tests. You should reduce your salt intake, exercise regularly, maintain a healthy weight, and we'll discuss medication if your blood pressure remains elevated.
+
+Patient: Thank you, doctor. I'll start making those changes.

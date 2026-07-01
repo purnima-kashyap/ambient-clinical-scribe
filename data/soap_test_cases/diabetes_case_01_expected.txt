@@ -1,11 +1,6 @@
-Subjective:
-Patient reports excessive thirst, fatigue, and frequent urination for two months.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Possible Type 2 Diabetes Mellitus.
-
-Plan:
-Recommend blood glucose testing and lifestyle assessment.
+{
+"subjective": "Patient reports excessive thirst, fatigue, and frequent urination, particularly at night, for the past two months. Also reports mild unintentional weight loss and occasional blurred vision. Family history is significant for Type 2 diabetes mellitus in the patient's father. Denies taking any regular medications.",
+"objective": "Blood pressure 128/82 mmHg. Pulse 84 bpm. Temperature normal. Random blood glucose measured at 248 mg/dL during the visit.",
+"assessment": "Findings are highly suggestive of Type 2 diabetes mellitus.",
+"plan": "Order fasting blood glucose and HbA1c testing to confirm the diagnosis. Counsel the patient on dietary modifications, reducing sugar intake, increasing regular physical activity, and maintaining adequate hydration. Schedule a follow-up appointment to review laboratory results and discuss further management."
+}

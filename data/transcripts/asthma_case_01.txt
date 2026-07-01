@@ -1,15 +1,39 @@
-Doctor: What brings you in today?
+Doctor: Good morning. What brings you in today?
 
-Patient: I'm wheezing and short of breath.
+Patient: I'm wheezing and feeling short of breath.
 
-Doctor: When did it begin?
+Doctor: When did your symptoms begin?
 
-Patient: Since last night.
+Patient: They started last night and have been getting worse since then.
 
-Doctor: Do you have asthma?
+Doctor: Are you also experiencing a cough?
 
-Patient: Yes.
+Patient: Yes, I've had a dry cough and a tight feeling in my chest.
 
-Doctor: Did your inhaler help?
+Doctor: Do you have a history of asthma?
 
-Patient: Only a little.
+Patient: Yes, I was diagnosed about six years ago.
+
+Doctor: Have you had any recent exposure to dust, smoke, pollen, or anything that usually triggers your asthma?
+
+Patient: Yesterday I was cleaning my house, and there was a lot of dust.
+
+Doctor: Have you used your rescue inhaler?
+
+Patient: Yes, I used it twice, but it only helped a little.
+
+Doctor: Have you had fever or chest pain?
+
+Patient: No, just wheezing and difficulty breathing.
+
+Doctor: Are you taking any regular asthma medication?
+
+Patient: Yes, I use a steroid inhaler every day.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your temperature is normal. Your oxygen saturation is 95%, pulse is 102 beats per minute, and I can hear wheezing in both lungs during examination.
+
+Doctor: This appears to be an asthma exacerbation, likely triggered by dust exposure. I'll prescribe a nebulizer treatment and advise you to continue your inhalers as directed. Avoid dust exposure, stay hydrated, and return immediately if your breathing becomes worse or if your inhaler does not provide relief.
+
+Patient: Thank you, doctor. I'll follow the treatment plan.
