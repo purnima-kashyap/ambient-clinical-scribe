@@ -1,15 +1,39 @@
-Doctor: What symptoms are you experiencing?
+Doctor: Good morning. What symptoms are you experiencing today?
 
-Patient: Burning while urinating and frequent urination.
+Patient: I've been having a burning sensation while urinating and needing to urinate very frequently.
 
-Doctor: Since when?
+Doctor: How long have you had these symptoms?
 
-Patient: Four days.
+Patient: About four days.
 
-Doctor: Any fever?
+Doctor: Do you feel an urgent need to urinate even when only a small amount comes out?
 
-Patient: Slight fever yesterday.
+Patient: Yes, that happens almost every time.
 
-Doctor: Any blood in urine?
+Doctor: Have you had any fever?
 
-Patient: No.
+Patient: I had a slight fever yesterday.
+
+Doctor: Have you noticed any blood in your urine?
+
+Patient: No, I haven't seen any blood.
+
+Doctor: Do you have any pain in your lower abdomen or back?
+
+Patient: I have some mild discomfort in my lower abdomen, but no back pain.
+
+Doctor: Have you had a urinary tract infection before?
+
+Patient: Yes, I had one about a year ago.
+
+Doctor: Have you taken any medication for these symptoms?
+
+Patient: I've been drinking plenty of water, but I haven't taken any medicine yet.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your temperature is 99.8°F, blood pressure is 118/72 mmHg, and pulse is 84 beats per minute. Your abdomen is soft with mild tenderness over the lower abdomen. There is no tenderness over the kidneys.
+
+Doctor: Your symptoms are most consistent with a urinary tract infection. I'll order a urine analysis and prescribe appropriate antibiotics. Continue drinking plenty of fluids and complete the full course of medication. Please return if you develop high fever, severe back pain, or worsening symptoms.
+
+Patient: Thank you, doctor. I'll start the treatment.

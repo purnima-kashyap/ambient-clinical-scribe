@@ -2,9 +2,12 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from backend.diarization.speaker_diarizer import diarize_audio
-from backend.asr.asr_service import transcribe_audio_with_timestamps
+from backend.asr.asr_service import transcribe_audio_with_timestamps 
+from backend.llm.llm_service import generate_soap_note
+from backend.vector_db.search import search_icd
 from backend.storage.cloudinary_service import upload_audio_to_cloudinary
 from backend.llm.llm_service import SOAPNoteGenerator
+
 import os
 import uuid
 import asyncio
@@ -149,6 +152,9 @@ async def handle_transcription(file: UploadFile = File(...)):
 class TranscriptRequest(BaseModel):
     transcript: str
 
+class ICDRequest(BaseModel):
+    query: str
+
 
 @app.post("/generate-soap")
 async def handle_soap_generation(request: TranscriptRequest):
@@ -157,4 +163,20 @@ async def handle_soap_generation(request: TranscriptRequest):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/recommend-icd")
+async def recommend_icd(request: ICDRequest):
+    """
+    Returns the most relevant ICD-10 codes.
+    """
+
+    try:
+
+        results = search_icd(request.query)
+
+        return {"recommendations": results}
+
+    except Exception as e:
+
         raise HTTPException(status_code=500, detail=str(e))

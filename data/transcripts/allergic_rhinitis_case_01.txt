@@ -1,19 +1,41 @@
 Doctor: What brings you in today?
 
+Doctor: Good morning. What brings you in today?
+
 Patient: I've been sneezing a lot and my nose has been running for the past five days.
 
-Doctor: Any fever?
+Doctor: Do you have a fever or sore throat?
 
-Patient: No fever.
+Patient: No fever or sore throat.
 
-Doctor: Do your eyes itch?
+Doctor: Are your eyes itchy or watery?
 
-Patient: Yes, my eyes are very itchy and watery.
+Patient: Yes, they're very itchy and watery, especially in the morning.
 
-Doctor: Have you noticed if it gets worse outdoors?
+Doctor: Do your symptoms get worse outdoors or around dust and pollen?
 
-Patient: Yes, especially in the mornings.
+Patient: Yes, they get much worse when I'm outside, especially in the mornings, and also when I'm cleaning the house.
 
-Doctor: Any medication?
+Doctor: Are you experiencing any cough or difficulty breathing?
 
-Patient: I tried an antihistamine yesterday.
+Patient: No, just constant sneezing and a blocked nose.
+
+Doctor: Have you had similar episodes before?
+
+Patient: Yes, I usually get these symptoms during the spring season.
+
+Doctor: Have you taken any medication?
+
+Patient: I took an antihistamine yesterday, and it helped a little.
+
+Doctor: Do you have any other medical conditions or allergies?
+
+Patient: No, I'm otherwise healthy.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your temperature is normal, blood pressure is 116/74 mmHg, pulse is 80 beats per minute, and oxygen saturation is 99%. On examination, your nasal passages are swollen with clear nasal discharge, and your throat and lungs are normal.
+
+Doctor: This appears to be allergic rhinitis, likely triggered by environmental allergens. I'll prescribe an antihistamine and a nasal corticosteroid spray. Try to avoid dust and pollen exposure, keep your windows closed during high pollen hours, and return if your symptoms don't improve or become worse.
+
+Patient: Thank you, doctor. I'll follow your advice.

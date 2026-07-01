@@ -1,9 +1,8 @@
-Subjective:
-Patient reports severe headache, nausea and sensitivity to light.
+{
+"subjective": "Patient reports a severe throbbing headache on the left side of the head for the past two days, rated 8/10 in intensity. Associated symptoms include nausea and sensitivity to bright light and loud noise. Reports a history of similar migraine episodes in the past. Denies fever, weakness, numbness, or blurred vision. Reports partial relief with paracetamol.",
+"objective": "Blood pressure 118/78 mmHg. Pulse 74 bpm. Temperature normal. Neurological examination is normal with no focal neurological deficits.",
+"assessment": "Migraine without aura.",
+"plan": "Prescribe migraine-specific medication for acute symptom relief. Advise the patient to rest in a quiet, dark room, maintain adequate hydration, avoid known migraine triggers, and follow up if headaches become more frequent or severe. Instruct the patient to seek immediate medical attention if new neurological symptoms, persistent vomiting, or an unusually severe headache develops."
+}
 
-Objective:
-No objective examination data available.
-
-Assessment:
-Likely Migraine.
 

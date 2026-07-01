@@ -1,12 +1,7 @@
-Subjective:
-Patient reports chronic neck pain, stiffness, intermittent arm pain, and occasional finger numbness.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Cervical spondylosis.
-
-Plan:
-Recommend posture correction, physiotherapy, pain management, neck exercises, and follow-up if neurological symptoms worsen.
+{
+"subjective": "Patient reports neck pain and stiffness for the past month. Pain is described as a dull ache that worsens after prolonged computer use and with looking down or sudden neck movements. Pain occasionally radiates to the right shoulder and is associated with intermittent numbness and tingling in the fingers of the right hand. Denies recent neck injury. Reports partial relief with a heating pad and occasional over-the-counter pain medication.",
+"objective": "Blood pressure 124/80 mmHg. Pulse 78 bpm. Temperature normal. Physical examination reveals reduced cervical range of motion, mild cervical paraspinal tenderness, and tingling during neck movement. Muscle strength is preserved with no focal motor deficits.",
+"assessment": "Cervical spondylosis with intermittent cervical radicular symptoms affecting the right upper extremity.",
+"plan": "Recommend posture correction, physiotherapy, cervical stretching and strengthening exercises, and use of analgesics as needed for pain. Advise limiting prolonged neck flexion during computer work and taking regular ergonomic breaks. Instruct patient to return for evaluation if numbness worsens, weakness develops, or symptoms fail to improve."
+}
 

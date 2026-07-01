@@ -1,11 +1,6 @@
-Subjective:
-Patient reports headache since yesterday.
-
-Objective:
-No fever reported.
-
-Assessment:
-Tension Headache.
-
-Plan:
-Recommend hydration, rest, and analgesics as required.
+{
+"subjective": "Patient reports a constant pressure-like headache across the forehead since yesterday, rated 5/10 in severity. Denies fever, nausea, vomiting, blurred vision, or neck stiffness. Reports increased work-related stress and poor sleep over the past week. Took paracetamol with partial relief.",
+"objective": "Blood pressure 118/74 mmHg. Pulse 76 bpm. Temperature normal. Neurological examination is normal with no focal neurological deficits or neck stiffness.",
+"assessment": "Tension-type headache, likely related to stress and inadequate sleep.",
+"plan": "Continue paracetamol as needed for pain relief. Encourage adequate hydration, regular sleep, stress management, and rest. Advise the patient to seek further evaluation if the headache worsens, persists, or is accompanied by fever, vomiting, vision changes, or neurological symptoms."
+}

@@ -1,11 +1,6 @@
-Subjective:
-Patient reports right ear pain for three days, mild fever, muffled hearing, and recent upper respiratory infection.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Acute otitis media.
-
-Plan:
-Recommend pain management, monitor symptoms, and consider antibiotic therapy if bacterial infection is suspected or symptoms worsen.
+{
+"subjective": "Patient reports severe throbbing pain in the right ear for the past three days, associated with mild fever and slightly muffled hearing. Reports a recent upper respiratory infection one week ago. Denies ear discharge, dizziness, or tinnitus. Reports partial relief with paracetamol.",
+"objective": "Temperature 100.2°F. Blood pressure 120/78 mmHg. Pulse 82 bpm. Otoscopic examination reveals a red, bulging right tympanic membrane without ear discharge. Left ear examination is normal.",
+"assessment": "Acute otitis media involving the right ear, likely following a recent upper respiratory infection.",
+"plan": "Prescribe appropriate antibiotic therapy if clinically indicated along with analgesics for pain relief. Advise the patient to complete the prescribed treatment, avoid water entering the affected ear, and return for follow-up if symptoms worsen, fever persists, ear discharge develops, or hearing loss increases."
+}
