@@ -1,19 +1,35 @@
-Doctor: What brings you in today?
+Doctor: Good morning. What brings you in today?
 
 Patient: I haven't been sleeping well for the last three weeks.
 
-Doctor: How many hours do you sleep?
+Doctor: Are you having trouble falling asleep, staying asleep, or both?
 
-Patient: Around four hours.
+Patient: Both. It takes me a long time to fall asleep, and I wake up several times during the night.
 
-Doctor: Do you wake up during the night?
+Doctor: On average, how many hours of sleep are you getting?
 
-Patient: Yes, several times.
+Patient: Around four hours each night.
 
-Doctor: Do you consume caffeine late in the day?
+Doctor: How do you feel during the day?
 
-Patient: Yes, I usually drink coffee in the evening.
+Patient: I'm tired all day and find it difficult to concentrate at work.
 
-Doctor: Any recent stress?
+Doctor: Do you drink coffee, tea, or other caffeinated drinks?
 
-Patient: Yes, work has been stressful.
+Patient: Yes, I usually drink coffee in the evening after work.
+
+Doctor: Have you been under any unusual stress recently?
+
+Patient: Yes, work has been very stressful over the past month.
+
+Doctor: Do you take any medications or use alcohol to help you sleep?
+
+Patient: No, I haven't taken any medications, and I don't use alcohol to help me sleep.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your blood pressure is 118/76 mmHg, pulse is 74 beats per minute, and your temperature is normal. Your physical examination is otherwise unremarkable.
+
+Doctor: Your symptoms are consistent with insomnia, likely worsened by stress and evening caffeine intake. I recommend improving your sleep routine, avoiding caffeine after the afternoon, reducing screen time before bed, and practicing relaxation techniques. If your symptoms continue despite these measures, we'll discuss additional treatment options at your follow-up visit.
+
+Patient: Thank you, doctor. I'll start making those changes.

@@ -1,11 +1,6 @@
-Subjective:
-Patient reports fever for three days, headache since yesterday, and mild cough.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Likely viral fever.
-
-Plan:
-Hydration, rest, monitor symptoms, continue paracetamol as needed.
+{
+"subjective": "Patient reports fever for the past three days with temperatures reaching 101–102°F, associated with headache, chills, body aches, fatigue, mild dry cough, and sore throat. Denies shortness of breath, chest pain, nausea, vomiting, or diarrhea. No significant past medical history or known drug allergies. Patient has taken paracetamol with temporary relief.",
+"objective": "Temperature 101.5°F. Blood pressure 118/76 mmHg. Pulse 94 bpm. Oxygen saturation 99%. Physical examination reveals mild throat congestion with clear lungs on auscultation.",
+"assessment": "Acute viral upper respiratory infection presenting with fever and mild respiratory symptoms.",
+"plan": "Continue paracetamol as needed for fever, maintain adequate hydration, get sufficient rest, and consume a light diet. Advise the patient to return for further evaluation if fever persists beyond five days, exceeds 103°F, or if shortness of breath or worsening symptoms develop."
+}

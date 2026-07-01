@@ -1,11 +1,6 @@
-Subjective:
-Patient reports right knee pain after twisting injury with mild swelling.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Acute knee strain.
-
-Plan:
-Recommend rest, ice, compression, elevation, pain relief, and reassessment if symptoms worsen.
+{
+"subjective": "Patient reports right knee pain for one week following a twisting injury while climbing stairs. Pain is worse with walking and climbing stairs and is associated with mild swelling. Denies hearing a popping sound or experiencing knee instability. Reports partial relief after applying ice and taking ibuprofen.",
+"objective": "Blood pressure 122/78 mmHg. Pulse 76 bpm. Temperature normal. Physical examination reveals mild swelling and tenderness over the medial aspect of the right knee with slightly reduced range of motion due to pain. Knee joint is stable without obvious deformity.",
+"assessment": "Acute right knee strain following a twisting injury.",
+"plan": "Recommend rest, ice application, compression with an elastic bandage, elevation of the affected leg, and analgesics as needed for pain. Advise avoiding strenuous activities until symptoms improve and follow up if pain, swelling, or difficulty bearing weight worsens."
+}

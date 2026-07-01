@@ -1,11 +1,6 @@
-Subjective:
-Patient reports left shoulder pain after heavy lifting with painful overhead movement.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Shoulder muscle strain.
-
-Plan:
-Recommend rest, gentle stretching, pain management, and follow-up if symptoms persist.
+{
+"subjective": "Patient reports left shoulder pain for the past five days following heavy lifting while moving furniture. Describes the pain as a dull ache with sharp pain during overhead arm movement. Denies swelling, bruising, numbness, tingling, or weakness. Reports partial relief with paracetamol.",
+"objective": "Blood pressure 118/76 mmHg. Pulse 74 bpm. Temperature normal. Physical examination reveals tenderness over the left shoulder with pain and mildly reduced range of motion during overhead movement. Muscle strength and sensation are intact.",
+"assessment": "Left shoulder muscle strain secondary to heavy lifting.",
+"plan": "Recommend rest, ice application, avoidance of heavy lifting, gentle stretching exercises as tolerated, and analgesics as needed for pain relief. Advise gradual return to normal activities and follow up if symptoms persist, worsen, or weakness develops."
+}

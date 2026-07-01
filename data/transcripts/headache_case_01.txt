@@ -1,15 +1,35 @@
-Doctor: What brings you in?
+Doctor: Good morning. What brings you in today?
 
 Patient: I've had a headache since yesterday.
 
-Doctor: Where is the pain?
+Doctor: Can you tell me where the pain is located?
 
-Patient: Across my forehead.
+Patient: It's mostly across my forehead.
 
-Doctor: Any fever?
+Doctor: How would you describe the pain? Is it throbbing or more like pressure?
 
-Patient: No.
+Patient: It's more like a constant pressure.
 
-Doctor: Have you taken anything?
+Doctor: On a scale of 1 to 10, how severe is the pain?
 
-Patient: Just paracetamol.
+Patient: Around a 5 out of 10.
+
+Doctor: Have you had any fever, nausea, vomiting, or blurred vision?
+
+Patient: No, none of those.
+
+Doctor: Have you been under any stress or sleeping less than usual?
+
+Patient: Yes, I've been working long hours this week and haven't been sleeping well.
+
+Doctor: Have you taken anything for the headache?
+
+Patient: I took paracetamol yesterday, and it helped a little.
+
+Doctor: Let me check your vital signs.
+
+Doctor: Your blood pressure is 118/74 mmHg, pulse is 76 beats per minute, and your temperature is normal. Your neurological examination is normal, and there are no signs of neck stiffness or focal neurological deficits.
+
+Doctor: This appears to be a tension-type headache, likely related to stress and lack of sleep. Continue taking paracetamol as needed, stay well hydrated, get adequate rest, and try to reduce stress. Please return if the headache becomes severe, persists for several days, or is associated with fever, vomiting, or changes in vision.
+
+Patient: Thank you, doctor. I'll follow your advice.

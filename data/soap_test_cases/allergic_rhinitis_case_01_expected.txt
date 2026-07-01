@@ -1,11 +1,41 @@
-Subjective:
-Patient reports frequent sneezing, runny nose, itchy watery eyes, and symptoms worsening outdoors.
+# SOAP Note
 
-Objective:
-No objective examination data available.
+## Subjective
 
-Assessment:
-Allergic rhinitis.
+* Chief Complaint: Sneezing and runny nose for 5 days.
+* History of Present Illness:
 
-Plan:
-Recommend avoiding allergens, continue antihistamines as needed, and consider intranasal corticosteroid if symptoms persist.
+  * Frequent sneezing.
+  * Clear nasal discharge.
+  * Itchy, watery eyes.
+  * Nasal congestion.
+  * Symptoms worsen outdoors and during the morning.
+  * Previous similar seasonal episodes.
+  * Partial relief with an over-the-counter antihistamine.
+* Past Medical History: No significant medical history.
+* Allergies: No known drug allergies.
+
+## Objective
+
+* Temperature: Normal
+* Blood Pressure: 116/74 mmHg
+* Pulse: 80 bpm
+* Oxygen Saturation: 99%
+* Physical Examination:
+
+  * Swollen nasal mucosa.
+  * Clear nasal discharge.
+  * Throat normal.
+  * Chest clear on auscultation.
+
+## Assessment
+
+Allergic rhinitis, likely triggered by environmental allergens (dust/pollen).
+
+## Plan
+
+* Start oral antihistamine.
+* Prescribe intranasal corticosteroid spray.
+* Avoid dust and pollen exposure.
+* Keep windows closed during high pollen periods.
+* Follow up if symptoms persist or worsen.

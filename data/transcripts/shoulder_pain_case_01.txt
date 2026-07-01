@@ -1,19 +1,35 @@
-Doctor: What brings you in today?
+Doctor: Good morning. What brings you in today?
 
 Patient: My left shoulder has been painful for about five days.
 
-Doctor: Did you lift anything heavy?
+Doctor: Can you tell me how the pain started?
 
-Patient: Yes, I moved some furniture.
+Patient: I moved some heavy furniture at home, and the pain started afterward.
 
-Doctor: Can you raise your arm?
+Doctor: Can you describe the pain?
 
-Patient: It hurts when I lift it above my head.
+Patient: It's a dull ache most of the time, but it becomes sharp when I try to lift my arm.
 
-Doctor: Any numbness?
+Doctor: Are you able to raise your arm above your head?
 
-Patient: No.
+Patient: I can, but it hurts quite a bit when I lift it above shoulder level.
 
-Doctor: Have you taken pain medication?
+Doctor: Have you noticed any swelling or bruising?
 
-Patient: Just paracetamol.
+Patient: No, I haven't noticed either.
+
+Doctor: Do you have any numbness, tingling, or weakness in your arm?
+
+Patient: No, just the pain.
+
+Doctor: Have you taken anything for the pain?
+
+Patient: I've only taken paracetamol, and it helped a little.
+
+Doctor: Let me examine your shoulder.
+
+Doctor: Your blood pressure is 118/76 mmHg, pulse is 74 beats per minute, and your temperature is normal. On examination, there is tenderness over the left shoulder with pain during overhead movement. Range of motion is mildly limited due to pain, but muscle strength and sensation are intact.
+
+Doctor: This appears to be a shoulder muscle strain from heavy lifting. I recommend resting the shoulder, avoiding heavy lifting for the next few days, applying ice several times a day, performing gentle stretching exercises as the pain improves, and taking pain medication as needed. Please return if the pain worsens or does not improve within the next one to two weeks.
+
+Patient: Thank you, doctor. I'll follow your advice.

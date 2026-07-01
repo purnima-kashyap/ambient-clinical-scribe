@@ -1,11 +1,6 @@
-Subjective:
-Patient reports burning epigastric pain, nausea, and recent NSAID use.
-
-Objective:
-No objective examination data available.
-
-Assessment:
-Acute gastritis.
-
-Plan:
-Advise avoiding NSAIDs and spicy foods, start acid suppression therapy, and monitor symptoms.
+{
+"subjective": "Patient reports a burning epigastric pain for the past four days that worsens after eating spicy foods. Associated symptoms include nausea without vomiting. Denies black stools, blood in stool, or significant weight loss. Reports recent ibuprofen use for back pain and occasional alcohol consumption.",
+"objective": "Blood pressure 120/78 mmHg. Pulse 82 bpm. Temperature normal. Physical examination reveals mild epigastric tenderness without guarding or rebound tenderness.",
+"assessment": "Acute gastritis, likely secondary to recent NSAID use.",
+"plan": "Discontinue NSAID use if possible and prescribe a proton pump inhibitor for acid suppression. Advise avoidance of spicy foods, alcohol, caffeine, and other gastric irritants. Recommend eating smaller meals and returning for evaluation if symptoms worsen, persist, or if gastrointestinal bleeding develops."
+}

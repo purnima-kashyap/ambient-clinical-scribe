@@ -1,19 +1,35 @@
-Doctor: What symptoms are you experiencing?
+Doctor: Good morning. What symptoms are you experiencing today?
 
-Patient: I've had neck pain and stiffness for the past month.
+Patient: I've been having neck pain and stiffness for about the past month.
 
-Doctor: Does the pain travel to your arms?
+Doctor: Can you describe the pain? Is it constant or does it come and go?
 
-Patient: Sometimes it goes into my right shoulder.
+Patient: It's mostly a dull ache, but it gets worse after working on my computer for several hours.
 
-Doctor: Any numbness?
+Doctor: Does the pain travel anywhere else?
 
-Patient: Occasionally in my fingers.
+Patient: Yes, sometimes it radiates into my right shoulder.
 
-Doctor: Does movement make it worse?
+Doctor: Do you experience any numbness or tingling?
 
-Patient: Yes, especially looking down for long periods.
+Patient: Occasionally I feel numbness and tingling in the fingers of my right hand.
 
-Doctor: Have you tried anything?
+Doctor: Does moving your neck make the pain worse?
 
-Patient: I've been using a heating pad.
+Patient: Yes, especially when I look down for long periods or turn my head suddenly.
+
+Doctor: Have you had any recent injury or accident involving your neck?
+
+Patient: No, I don't remember any injury.
+
+Doctor: Have you tried anything to relieve the pain?
+
+Patient: I've been using a heating pad and taking occasional over-the-counter pain medication, which helps a little.
+
+Doctor: Let me examine your neck.
+
+Doctor: Your blood pressure is 124/80 mmHg, pulse is 78 beats per minute, and your temperature is normal. On examination, there is reduced range of motion of the cervical spine with mild tenderness over the neck muscles. Mild tingling is reported during neck movement, but muscle strength is preserved.
+
+Doctor: This is most consistent with cervical spondylosis. I'll recommend physiotherapy, posture correction, neck stretching exercises, and pain medication as needed. If the numbness worsens or you develop weakness in your arm, please return for further evaluation.
+
+Patient: Thank you, doctor. I'll follow your advice.

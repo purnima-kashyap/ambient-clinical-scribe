@@ -1,11 +1,6 @@
-Subjective:
-Patient reports headaches and dizziness for three weeks.
-
-Objective:
-Blood pressure reported as 150/95 mmHg.
-
-Assessment:
-Possible Hypertension.
-
-Plan:
-Recommend regular blood pressure monitoring, dietary salt reduction, exercise, and physician follow-up.
+{
+"subjective": "Patient reports headaches and dizziness for the past three weeks, occurring almost daily. Home blood pressure reading yesterday was approximately 150/95 mmHg. Denies chest pain, shortness of breath, or blurred vision. Family history is significant for hypertension in the patient's mother. Reports a diet high in salty and processed foods.",
+"objective": "Blood pressure 152/96 mmHg. Pulse 82 bpm. Temperature normal. Cardiac and respiratory examinations are unremarkable.",
+"assessment": "Hypertension, with persistently elevated blood pressure and associated symptoms.",
+"plan": "Recommend regular home blood pressure monitoring, reduce dietary salt intake, follow a heart-healthy diet, increase regular physical activity, maintain a healthy weight, and obtain baseline laboratory investigations. Schedule follow-up to reassess blood pressure and determine the need for antihypertensive medication."
+}

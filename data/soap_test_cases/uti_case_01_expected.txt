@@ -1,9 +1,7 @@
-Subjective:
-Patient reports burning urination and increased urinary frequency.
-
-Objective:
-Low-grade fever reported.
-
-Assessment:
-Possible Urinary Tract Infection.
+{
+"subjective": "Patient reports burning during urination, increased urinary frequency, and urinary urgency for the past four days. Also reports mild lower abdominal discomfort and a low-grade fever yesterday. Denies blood in the urine or back pain. Has a history of a previous urinary tract infection approximately one year ago.",
+"objective": "Temperature 99.8°F. Blood pressure 118/72 mmHg. Pulse 84 bpm. Physical examination reveals mild suprapubic tenderness without costovertebral angle tenderness.",
+"assessment": "Acute uncomplicated urinary tract infection (UTI).",
+"plan": "Order urinalysis to confirm the diagnosis and prescribe appropriate antibiotic therapy. Encourage increased fluid intake and completion of the full antibiotic course. Advise the patient to return if symptoms worsen, high fever develops, severe flank pain occurs, or symptoms persist despite treatment."
+}
 

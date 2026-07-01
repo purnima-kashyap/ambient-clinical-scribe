@@ -1,17 +1,15 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from backend.diarization.speaker_diarizer import diarize_audio
+from backend.asr.asr_service import transcribe_audio_with_timestamps
+from backend.storage.cloudinary_service import upload_audio_to_cloudinary
+from backend.llm.llm_service import SOAPNoteGenerator
 import os
 import uuid
 import asyncio
 
-from backend.asr.asr_service import transcribe_audio_with_timestamps
-from backend.diarization.speaker_diarizer import diarize_segments, diarize_audio
-from backend.storage.cloudinary_service import upload_audio_to_cloudinary
-from backend.llm.llm_service import SOAPNoteGenerator
-from backend.rag.icd10_recommender import ICD10Recommender
-
-app = FastAPI(title="AI Clinical Scribe API")
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,11 +20,10 @@ app.add_middleware(
 )
 
 soap_generator = SOAPNoteGenerator()
-icd10_recommender = ICD10Recommender()
 
 ALLOWED_EXTENSIONS = {".wav", ".mp3", ".m4a", ".webm", ".ogg"}
 MAX_FILE_SIZE = 25 * 1024 * 1024  # 25 MB
-TEMP_DIR = os.path.join(os.path.dirname(__file__), "..", "temp_uploads")
+TEMP_DIR = "temp_uploads"
 os.makedirs(TEMP_DIR, exist_ok=True)
 
 
@@ -36,11 +33,12 @@ def home():
 
 
 @app.get("/diarize")
-def diarize_stub():
+def diarize():
     return diarize_audio()
 
 
 async def _save_upload(file: UploadFile, temp_file_path: str) -> int:
+    """Streams the upload to disk, enforcing the size limit. Returns bytes written."""
     size = 0
     with open(temp_file_path, "wb") as buffer:
         while chunk := await file.read(1024 * 1024):
@@ -57,8 +55,12 @@ async def _save_upload(file: UploadFile, temp_file_path: str) -> int:
 @app.post("/process-consultation")
 async def process_consultation(file: UploadFile = File(...)):
     """
-    1. Save audio temporarily -> 2. Upload to Cloudinary -> 3. Transcribe (Whisper)
-    -> 4. Diarize (MFCC+KMeans) -> 5. Generate SOAP note -> 6. ICD-10 RAG -> 7. Cleanup
+    Full pipeline for one consultation:
+    1. Save uploaded audio temporarily
+    2. Upload audio to Cloudinary (permanent storage, returns hosted URL)
+    3. Transcribe audio locally with Whisper
+    4. Generate a structured SOAP note from the transcript
+    5. Delete the local temp copy (Cloudinary copy remains)
     """
     ext = os.path.splitext(file.filename)[1].lower()
     if ext not in ALLOWED_EXTENSIONS:
@@ -71,15 +73,18 @@ async def process_consultation(file: UploadFile = File(...)):
     temp_file_path = os.path.join(TEMP_DIR, f"{consultation_id}{ext}")
 
     try:
+        # --- Step 1: Save locally (temporary) ---
         size = await _save_upload(file, temp_file_path)
         if size == 0:
             raise HTTPException(status_code=400, detail="Uploaded file is empty.")
 
+        # --- Step 2: Upload to Cloudinary ---
         try:
             audio_data = await upload_audio_to_cloudinary(temp_file_path, public_id=consultation_id)
         except RuntimeError as e:
             raise HTTPException(status_code=502, detail=f"Audio storage failed: {str(e)}")
 
+        # --- Step 3: Transcribe ---
         try:
             asr_result = await transcribe_audio_with_timestamps(temp_file_path)
         except RuntimeError as e:
@@ -91,13 +96,7 @@ async def process_consultation(file: UploadFile = File(...)):
                 detail="Transcription produced no text — audio may be silent or unclear."
             )
 
-        try:
-            diarized_segments = await asyncio.to_thread(
-                diarize_segments, temp_file_path, asr_result["segments"]
-            )
-        except Exception:
-            diarized_segments = asr_result["segments"]
-
+        # --- Step 4: Generate SOAP note ---
         try:
             soap_result = await soap_generator.generate(asr_result["text"])
         except ValueError as e:
@@ -105,22 +104,12 @@ async def process_consultation(file: UploadFile = File(...)):
         except RuntimeError as e:
             raise HTTPException(status_code=500, detail=f"SOAP generation failed: {str(e)}")
 
-        try:
-            icd10_suggestions = icd10_recommender.recommend(soap_result.assessment)
-        except Exception as e:
-            print(f"[ICD10 ERROR] {type(e).__name__}: {e}")
-            icd10_suggestions = []
-
+        # --- Step 5: Return everything tied to one consultation_id ---
         return {
             "consultation_id": consultation_id,
             "audio": audio_data,
-            "transcript": {
-                "text": asr_result["text"],
-                "language": asr_result["language"],
-                "segments": diarized_segments,
-            },
+            "transcript": asr_result,
             "soap_note": soap_result,
-            "icd10_recommendations": icd10_suggestions,
         }
 
     except HTTPException:
@@ -129,9 +118,12 @@ async def process_consultation(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
     finally:
+        # Always clean up the local temp copy — Cloudinary keeps the real one
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
 
+
+# --- Individual endpoints kept for testing/debugging each stage separately ---
 
 @app.post("/transcribe")
 async def handle_transcription(file: UploadFile = File(...)):
@@ -164,17 +156,5 @@ async def handle_soap_generation(request: TranscriptRequest):
         return await soap_generator.generate(request.transcript)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-class AssessmentRequest(BaseModel):
-    assessment: str
-
-
-@app.post("/recommend-icd10")
-async def handle_icd10_recommendation(request: AssessmentRequest):
-    try:
-        return {"icd10_recommendations": icd10_recommender.recommend(request.assessment)}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
