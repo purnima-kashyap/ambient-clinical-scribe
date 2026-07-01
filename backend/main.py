@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from backend.diarization.speaker_diarizer import diarize_audio
 from backend.asr.asr_service import transcribe_audio_with_timestamps 
-from backend.llm.llm_service import generate_soap_note
 from backend.vector_db.search import search_icd
 from backend.storage.cloudinary_service import upload_audio_to_cloudinary
 from backend.llm.llm_service import SOAPNoteGenerator
