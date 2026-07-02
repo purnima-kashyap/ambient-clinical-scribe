@@ -10,7 +10,6 @@ class SOAPNote(BaseModel):
     assessment: str = Field(description="The medical diagnosis or differential diagnosis based on S and O.")
     plan: str = Field(description="Treatment plan, medications prescribed, tests ordered, and follow-up instructions.")
 
-# Note: Added explicit JSON formatting instructions for the local model
 _SYSTEM_PROMPT= """
 You are an expert AI clinical scribe. Your task is to convert raw medical consultation transcripts into highly structured, professional SOAP notes.
 
@@ -18,7 +17,8 @@ CRITICAL RULES:
 1. Extract ONLY medically relevant information. Ignore small talk entirely.
 2. Do NOT hallucinate. Never invent symptoms, vitals, or diagnoses that were not explicitly stated in the transcript.
 3. Use professional medical terminology where appropriate.
-4. You MUST format your response as a valid JSON object matching the requested schema. Do not include any text outside the JSON.
+4. NEVER return an empty string for any field. If the transcript does not explicitly mention objective findings, write "No objective findings recorded in this encounter." If it does not state an explicit diagnosis, you must still infer the single most clinically likely diagnosis based on the Subjective findings — never leave Assessment blank. If no plan was stated, write "No treatment plan documented in this encounter."
+5. You MUST format your response as a valid JSON object matching the requested schema. Do not include any text outside the JSON.
 
 Here are two examples of perfect performance:
 
@@ -104,8 +104,16 @@ class SOAPNoteGenerator:
                 "transcript": transcript,
                 "format_instructions": self._format_instructions,
             })
-            # Validate the LLM output against the Pydantic schema before returning
+
+            # Local LLMs occasionally return blank fields instead of a fallback
+            if any(not str(result.get(field, "")).strip() for field in
+                   ("subjective", "objective", "assessment", "plan")):
+                result = await self._chain.ainvoke({
+                    "transcript": transcript,
+                    "format_instructions": self._format_instructions,
+                })
+
             return SOAPNote(**result)
- 
+
         except Exception as e:
             raise RuntimeError(f"Local LLM generation failed: {str(e)}") from e
