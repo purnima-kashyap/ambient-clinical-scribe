@@ -5,6 +5,9 @@ from backend.diarization.speaker_diarizer import diarize_audio
 from backend.asr.asr_service import transcribe_audio_with_timestamps
 from backend.storage.cloudinary_service import upload_audio_to_cloudinary
 from backend.llm.llm_service import SOAPNoteGenerator
+from backend.services.transcription_service import process_audio
+
+
 import os
 import uuid
 import asyncio
@@ -13,7 +16,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5500",
+        "http://127.0.0.1:5500",
+        "http://localhost:3000",
+        "http://localhost:5173",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -32,9 +40,64 @@ def home():
     return {"message": "Healthcare AI Scribe Running"}
 
 
-@app.get("/diarize")
-def diarize():
-    return diarize_audio()
+@app.post("/diarize")
+async def diarize(file: UploadFile = File(...)):
+
+    ext = os.path.splitext(file.filename)[1]
+
+    temp_path = os.path.join(
+        TEMP_DIR,
+        f"{uuid.uuid4().hex}{ext}"
+    )
+
+    try:
+
+        await _save_upload(file, temp_path)
+
+        result = diarize_audio(temp_path)
+
+        return result
+
+    finally:
+
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+    ext = os.path.splitext(file.filename)[1].lower()
+
+    temp_file = os.path.join(
+        TEMP_DIR,
+        f"{uuid.uuid4().hex}{ext}"
+    )
+
+    try:
+        await _save_upload(file, temp_file)
+
+        result = diarize_audio(temp_file)
+
+        return result
+
+    finally:
+        if os.path.exists(temp_file):
+            os.remove(temp_file)
+
+    ext = os.path.splitext(file.filename)[1].lower()
+
+    if ext not in ALLOWED_EXTENSIONS:
+        raise HTTPException(status_code=400, detail="Unsupported file")
+
+    temp_file = os.path.join(TEMP_DIR, f"{uuid.uuid4().hex}{ext}")
+
+    try:
+        await _save_upload(file, temp_file)
+
+        result = diarize_audio(temp_file)
+
+        return result
+
+    finally:
+        if os.path.exists(temp_file):
+            os.remove(temp_file)
 
 
 async def _save_upload(file: UploadFile, temp_file_path: str) -> int:
@@ -132,19 +195,23 @@ async def handle_transcription(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail=f"Unsupported file type: {ext}")
 
     temp_file_path = os.path.join(TEMP_DIR, f"{uuid.uuid4().hex}{ext}")
+
     try:
         size = await _save_upload(file, temp_file_path)
         if size == 0:
             raise HTTPException(status_code=400, detail="Uploaded file is empty.")
-        return await transcribe_audio_with_timestamps(temp_file_path)
+
+        # ✅ ONLY CHANGE HERE
+        return await process_audio(temp_file_path)
+
     except HTTPException:
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
     finally:
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
-
 
 class TranscriptRequest(BaseModel):
     transcript: str

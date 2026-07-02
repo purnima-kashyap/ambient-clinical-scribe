@@ -176,13 +176,16 @@ Audio Processed
         or click below to browse your computer
     </p>
 
-    <button class="btn btn-primary choose-btn">
+<input
+    type="file"
+    id="audioFile"
+    accept=".mp3,.wav,.m4a,.ogg,.webm"
+    hidden
+>
 
-        <i class="bi bi-folder2-open"></i>
-
-        Choose File
-
-    </button>
+<button class="btn btn-primary choose-btn" id="chooseBtn">
+    Choose File
+</button>
 
     <p class="file-info">
         Supported: MP3 • WAV • M4A
@@ -261,65 +264,11 @@ Audio Processed
 
         </div>
 
-        <div class="transcript-body">
+     
+                        <div class="transcript-body" id="transcript"></div>
 
-            <div class="message doctor">
+        
 
-                <div class="message-top">
-
-                    <strong>Doctor</strong>
-
-                    <span>00:00:05</span>
-
-                </div>
-
-                <p>Good morning. What brings you in today?</p>
-
-            </div>
-
-            <div class="message patient">
-
-                <div class="message-top">
-
-                    <strong>Patient</strong>
-
-                    <span>00:00:12</span>
-
-                </div>
-
-                <p>I've had fever and headache for the past three days.</p>
-
-            </div>
-
-            <div class="message doctor">
-
-                <div class="message-top">
-
-                    <strong>Doctor</strong>
-
-                    <span>00:00:18</span>
-
-                </div>
-
-                <p>Have you taken any medication?</p>
-
-            </div>
-
-            <div class="message patient">
-
-                <div class="message-top">
-
-                    <strong>Patient</strong>
-
-                    <span>00:00:24</span>
-
-                </div>
-
-                <p>Only paracetamol yesterday.</p>
-
-            </div>
-
-        </div>
 
     </div>
 
