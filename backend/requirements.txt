@@ -1,58 +1,51 @@
-# ==========================
-# Ambient Clinical AI
-# Requirements
-# ==========================
+fastapi==0.115.6
+uvicorn[standard]==0.35.0
+python-multipart==0.0.20
 
-# FastAPI Backend
-fastapi
-uvicorn[standard]
-python-multipart
-pydantic
+pydantic==2.11.7
 
-# LLM (Ollama)
-ollama
+numpy==1.26.4
+pandas==2.2.3
 
-# Speech-to-Text
-openai-whisper
+torch==2.3.1
+torchvision==0.18.1
+torchaudio==2.3.1
 
-# Audio Processing
-soundfile
-librosa
-pydub
+faster-whisper==1.1.1
+ctranslate2==4.4.0
 
-# PyTorch
-torch
-torchvision
-torchaudio
+transformers==4.43.4
+accelerate==0.34.2
 
-# Embeddings & RAG
-sentence-transformers
-faiss-cpu
-transformers
-accelerate
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0.post1
 
-# Data Processing
-numpy
-pandas
-scikit-learn
-openpyxl
+librosa==0.10.2.post1
+soundfile==0.13.1
+pydub==0.25.1
 
-# LangChain 
-langchain
-langchain-community
+langchain==0.3.27
+langchain-community==0.3.29
 
-# Environment Variables
-python-dotenv
+huggingface-hub==0.24.7
 
-# HTTP Requests
-requests
-httpx
+pyannote.audio==3.1.1
 
-# JSON Serialization
-orjson
+torchmetrics==1.4.1
+lightning==2.3.3
+pytorch-lightning==2.3.3
 
-# Logging
-loguru
+scikit-learn==1.5.2
 
-# Progress Bars
-tqdm
+python-dotenv==1.1.1
+
+httpx==0.28.1
+requests==2.32.5
+
+loguru==0.7.3
+orjson==3.11.3
+
+ollama==0.5.3
+
+openpyxl==3.1.5
+tqdm==4.67.1
