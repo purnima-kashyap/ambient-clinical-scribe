@@ -6,6 +6,7 @@ from backend.asr.asr_service import transcribe_audio_with_timestamps
 from backend.vector_db.search import search_icd
 from backend.storage.cloudinary_service import upload_audio_to_cloudinary
 from backend.llm.llm_service import SOAPNoteGenerator
+from backend.services.transcription_service import process_audio
 
 import os
 import uuid
@@ -194,19 +195,23 @@ async def handle_transcription(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail=f"Unsupported file type: {ext}")
 
     temp_file_path = os.path.join(TEMP_DIR, f"{uuid.uuid4().hex}{ext}")
+
     try:
         size = await _save_upload(file, temp_file_path)
         if size == 0:
             raise HTTPException(status_code=400, detail="Uploaded file is empty.")
-        return await transcribe_audio_with_timestamps(temp_file_path)
+
+        # ✅ ONLY CHANGE HERE
+        return await process_audio(temp_file_path)
+
     except HTTPException:
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
     finally:
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
-
 
 class TranscriptRequest(BaseModel):
     transcript: str
