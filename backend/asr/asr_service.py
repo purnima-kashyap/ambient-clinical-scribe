@@ -18,10 +18,12 @@ async def transcribe_audio_with_timestamps(file_path: str) -> dict:
     try:
         def run_transcription():
             segments_generator, info = _model.transcribe(
-                file_path,
-                beam_size=5,
-                initial_prompt="Medical consultation detailing clinical symptoms, patient history, and pharmacology."
-            )
+            file_path,
+            beam_size=5,
+            word_timestamps=True,
+            vad_filter=True,
+            initial_prompt="Medical consultation detailing clinical symptoms, patient history, and pharmacology."
+        )
 
             segments = []
             full_text = ""
