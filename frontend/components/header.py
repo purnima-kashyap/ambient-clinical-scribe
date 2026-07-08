@@ -1,17 +1,23 @@
 import streamlit as st
 
+
 def show_header():
 
-    col1, col2, col3, col4 = st.columns([6,2,2,2])
+    left, right = st.columns([5, 1])
 
-    with col1:
-        st.title("New Consultation")
+    with left:
 
-    with col2:
-        st.button("🎤 Record")
+        st.title("🩺 AI Clinical Scribe")
 
-    with col3:
-        st.button("⬆ Upload")
+        st.caption(
+            "Ambient Intelligence for Healthcare • AI Powered Clinical Documentation"
+        )
 
-    with col4:
-        st.success("Processed")
+    with right:
+
+        st.metric(
+            label="System Status",
+            value="🟢 Ready"
+        )
+
+    st.divider()
