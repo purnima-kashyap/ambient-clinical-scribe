@@ -1,4 +1,6 @@
+import os
 import streamlit as st
+
 from components.sidebar import show_sidebar
 from components.header import show_header
 from components.upload import show_upload
@@ -14,7 +16,9 @@ st.set_page_config(
 )
 
 # Load CSS
-with open("style.css") as f:
+css_path = os.path.join(os.path.dirname(__file__), "style.css")
+
+with open(css_path) as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 show_sidebar()
