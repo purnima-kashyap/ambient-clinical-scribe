@@ -1,12 +1,7 @@
 from backend.asr.asr_service import transcribe_audio_with_timestamps
 from backend.diarization.speaker_diarizer import diarize_audio
 from backend.diarization.merge_speakers import merge_speakers
-
-
-SPEAKER_ROLE_MAP = {
-    "SPEAKER_0": "Doctor",
-    "SPEAKER_1": "Patient"
-}
+from backend.services.role_detector import detect_roles, fix_questions
 
 
 async def process_audio(audio_path: str):
@@ -18,11 +13,16 @@ async def process_audio(audio_path: str):
     # 2. DIARIZATION
     speaker_segments = diarize_audio(audio_path)
 
-    # 3. MERGE
+    # 3. Merge
     merged = merge_speakers(
         asr_segments,
-        speaker_segments,
-        SPEAKER_ROLE_MAP
+        speaker_segments
     )
+
+    # 4. Detect Doctor/Patient
+    merged = detect_roles(merged)
+
+    # 5. Fix question labels
+    merged = fix_questions(merged)
 
     return {"segments": merged}
