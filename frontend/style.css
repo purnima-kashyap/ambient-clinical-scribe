@@ -1,789 +1,209 @@
-*{
+/* ===================================================
+   GLOBAL
+=================================================== */
 
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
+.stApp{
+    background:#F4F7FC;
+    color:#1E293B;
 }
 
-body{
-
-background:#f4f7fc;
-
-font-family:'Inter',sans-serif;
-
+.block-container{
+    max-width:1600px;
+    padding:1.5rem 2rem;
 }
 
-/* Sidebar */
+/* ===================================================
+   MAIN CONTAINERS
+=================================================== */
 
-.sidebar{
-
-background:white;
-
-min-height:100vh;
-
-padding:30px 20px;
-
-border-right:1px solid #e5e7eb;
-
+div[data-testid="stVerticalBlock"]{
+    background:#FFFFFF;
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:20px;
+    box-shadow:0 6px 18px rgba(15,23,42,.08);
 }
 
-.logo{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-margin-bottom:40px;
-
-}
-
-.logo i{
-
-font-size:38px;
-
-color:#2563eb;
-
-}
-
-.logo h3{
-
-font-size:26px;
-
-font-weight:700;
-
-margin:0;
-
-}
-
-.logo p{
-
-font-size:12px;
-
-color:gray;
-
-margin:0;
-
-}
-
-.menu{
-
-list-style:none;
-
-padding:0;
-
-}
-
-.menu li{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-padding:15px;
-
-margin-bottom:12px;
-
-border-radius:10px;
-
-cursor:pointer;
-
-transition:.3s;
-
-font-size:18px;
-
-}
-
-.menu li:hover{
-
-background:#eff6ff;
-
-color:#2563eb;
-
-}
-
-.menu li.active{
-
-background:#2563eb;
-
-color:white;
-
-}
-
-.menu i{
-
-font-size:18px;
-
-}
-
-/* Main */
-
-main{
-
-padding: 35px;
-
-}
-
-/* Navbar */
-
-.top-navbar{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-background:white;
-
-padding:20px 30px;
-
-border: radius 22px;
-
-box-shadow:0 10px 30px rgba(15,23,42,.08);
-
-margin-bottom:30px;
-
-}
-
-.page-title{
-
-display:flex;
-
-align-items:center;
-
-gap:18px;
-
-}
-
-.page-title h2{
-
-margin:0;
-
-font-size:28px;
-
-font-weight:700;
-
-}
-
-.page-title i{
-
-font-size:30px;
-
-cursor:pointer;
-
-}
-
-.top-actions{
-
-display:flex;
-
-gap:15px;
-
-}
-
-/* Cards */
-
-.dashboard-card{
-
-background:white;
-
-border: radius 22px;
-
-padding:25px;
-
-min-height:320px;
-
-box-shadow:0 10px 30px rgba(15,23,42,.08);
-
-}
-
-.dashboard-card h4{
-
-font-size:22px;
-
-font-weight:700;
-
-margin-bottom:20px;
-
-}
-
-/* Upload Card */
-
-.upload-box{
-
-    border:2px dashed #d9dee8;
-
-    border-radius:18px;
-
-    padding:40px 25px;
-
-    text-align:center;
-
-    background:#fafcff;
-
-}
-
-.upload-icon{
-
-    font-size:60px;
-
-    color:#2563eb;
-
-    margin-bottom:15px;
-
-}
-
-.upload-box h5{
-
+/* ===================================================
+   TYPOGRAPHY
+=================================================== */
+
+h1{
+    color:#1E293B;
     font-weight:700;
-
-    margin-bottom:8px;
-
+    margin-bottom:4px;
 }
 
-.upload-box p{
-
-    margin-bottom:18px;
-
-}
-
-.choose-btn{
-
-    padding:10px 30px;
-
-    border-radius:10px;
-
+h2,
+h3,
+h4{
+    color:#334155;
     font-weight:600;
-
 }
 
-.file-info{
-
-    font-size:14px;
-
-    color:#7b7b7b;
-
-    margin-top:18px;
-
+p{
+    color:#64748B;
     line-height:1.6;
-
 }
 
-.divider{
+/* ===================================================
+   BUTTONS
+=================================================== */
 
-    display:flex;
-
-    align-items:center;
-
-    text-align:center;
-
-    margin:25px 0;
-
-}
-
-.divider::before,
-
-.divider::after{
-
-    content:"";
-
-    flex:1;
-
-    border-bottom:1px solid #ddd;
-
-}
-
-.divider span{
-
-    padding:0 15px;
-
-    color:#8d8d8d;
-
-    font-size:14px;
-
-}
-
-.record-audio-btn{
+.stButton button{
 
     width:100%;
+    height:44px;
 
-    background:#eef4ff;
-
-    color:#2563eb;
-
-    border:1px solid #d7e4ff;
-
-    padding:14px;
-
+    border:none;
     border-radius:12px;
 
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-.record-audio-btn:hover{
-
-    background:#2563eb;
-
+    background:#2563EB;
     color:white;
 
+    font-size:14px;
+    font-weight:600;
+
+    transition:all .25s ease;
 }
 
-.audio-player{
+.stButton button:hover{
 
-    display:flex;
+    background:#1D4ED8;
 
-    align-items:center;
+    transform:translateY(-2px);
 
-    gap:12px;
+    box-shadow:0 8px 20px rgba(37,99,235,.30);
+}
 
-    margin-top:25px;
+/* ===================================================
+   FILE UPLOADER
+=================================================== */
 
-    background:#f8f9fb;
+.stFileUploader{
 
-    padding:14px;
+    border:2px dashed #BFDBFE;
 
     border-radius:14px;
 
+    background:#F8FAFC;
+
+    padding:18px;
 }
 
-.play-btn{
+/* ===================================================
+   SIDEBAR
+=================================================== */
 
-    width:52px;
+section[data-testid="stSidebar"]{
 
-    height:52px;
+    background:#162554;
 
-    border:none;
+}
 
-    border-radius:50%;
-
-    background:#2563eb;
+section[data-testid="stSidebar"] *{
 
     color:white;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    flex-shrink:0;
-
 }
 
-.play-btn i{
+section[data-testid="stSidebar"] .stButton button{
 
-    font-size:22px;
-
-    margin-left:3px;   /* visually centers the play icon */
-}
-
-.play-btn:hover{
-
-    background:#0d6efd;
-
-    transform:scale(1.05);
-
-}
-.audio-player span{
-
-    font-size:14px;
-
-    white-space:nowrap;
-
-}
-
-.volume-btn{
-
-    border:none;
-
-    background:transparent;
-
-    font-size:20px;
-
-    color:#555;
-
-}
-   
-/* Transcript */
-
-.transcript-card{
-
-    min-height:620px;
-
-}
-
-.transcript-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:18px;
-
-}
-
-.speaker-legend{
-
-    margin-bottom:20px;
-
-    font-size:14px;
-
-}
-
-.doctor-dot,
-
-.patient-dot{
-
-    width:12px;
-
-    height:12px;
-
-    border-radius:50%;
-
-    display:inline-block;
-
-    margin-right:8px;
-
-}
-
-.doctor-dot{
-
-    background:#2563eb;
-
-}
-
-.patient-dot{
-
-    background:#28a745;
-
-}
-
-.transcript-body{
-
-    height:500px;
-
-    overflow-y:auto;
-
-    padding-right:10px;
-
-}
-
-.message{
-
-    padding:18px;
-
-    border:1px solid #ececec;
-
-    border-radius:12px;
-
-    margin-bottom:18px;
-
-}
-
-.message-top{
-
-    display:flex;
-
-    justify-content:space-between;
+    background:#233876;
 
     margin-bottom:10px;
 
-}
-
-.message-top span{
-
-    color:#999;
-
-    font-size:13px;
+    border-radius:10px;
 
 }
 
-.message.doctor{
+section[data-testid="stSidebar"] .stButton button:hover{
 
-    border-left:5px solid #2563eb;
-
-}
-
-.message.patient{
-
-    border-left:5px solid #28a745;
+    background:#355CC9;
 
 }
 
-.message p{
+/* Hide only sidebar scrollbar */
 
-    margin:0;
+section[data-testid="stSidebar"]{
 
-    line-height:1.6;
+    scrollbar-width:none;
 
-}
-
-/* SOAP */
-
-.soap-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:20px;
+    -ms-overflow-style:none;
 
 }
 
-.soap-grid{
+section[data-testid="stSidebar"]::-webkit-scrollbar{
 
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:18px;
-
-margin-bottom:20px;
+    display:none;
 
 }
 
-.soap-card{
+/* ===================================================
+   INPUTS
+=================================================== */
 
-padding:18px;
+.stTextInput input,
+.stTextArea textarea{
 
-border-radius:15px;
+    border-radius:10px;
 
-min-height:180px;
-
-}
-
-.subjective{
-
-background:#eef5ff;
+    border:1px solid #CBD5E1;
 
 }
 
-.objective{
+.stSelectbox{
 
-background:#edfdf3;
-
-}
-
-.assessment{
-
-background:#f4edff;
+    border-radius:10px;
 
 }
 
-.plan{
+/* ===================================================
+   ALERTS
+=================================================== */
 
-background:#fff7e9;
+.stAlert{
 
-}
-
-.soap-title{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-margin-bottom:15px;
+    border-radius:12px;
 
 }
 
-.soap-icon{
+/* ===================================================
+   METRICS
+=================================================== */
 
-width:34px;
+div[data-testid="metric-container"]{
 
-height:34px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-border-radius:50%;
-
-background:white;
-
-font-weight:700;
-
-}
-
-.soap-card h5{
-
-margin:0;
-
-font-size:18px;
-
-}
-
-.soap-card ul{
-
-padding-left:18px;
-
-}
-
-.soap-buttons{
-
-display:flex;
-
-gap:15px;
-
-}
-
-.soap-buttons button{
-
-flex:1;
-
-padding:12px;
-
-}
-
-/* ICD Panel */
-
-.icd-header{
-
-    margin-bottom:20px;
-
-}
-
-.icd-list{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
-
-}
-
-.icd-item{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:18px;
-
-    border:1px solid #e9ecef;
+    background:white;
 
     border-radius:14px;
 
-    transition:.3s;
+    padding:12px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
 
 }
 
-.icd-item:hover{
+/* ===================================================
+   SCROLLBAR
+=================================================== */
 
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+::-webkit-scrollbar{
 
-}
-
-.icd-info{
-
-    flex:1;
+    width:8px;
 
 }
 
-.icd-info h5{
+::-webkit-scrollbar-thumb{
 
-    margin:0;
+    background:#CBD5E1;
 
-    font-size:18px;
-
-    font-weight:700;
+    border-radius:20px;
 
 }
 
-.icd-info p{
+::-webkit-scrollbar-track{
 
-    margin:5px 0 0;
-
-    color:#666;
-
-    font-size:14px;
-
-}
-
-.confidence{
-
-    padding:8px 14px;
-
-    border-radius:8px;
-
-    font-weight:600;
-
-    font-size:14px;
-
-}
-
-.high{
-
-    background:#d4edda;
-
-    color:#155724;
-
-}
-
-.medium{
-
-    background:#fff3cd;
-
-    color:#856404;
-
-}
-
-.low{
-
-    background:#f8d7da;
-
-    color:#721c24;
-
-}
-
-.confirm-btn{
-
-    width:100%;
-
-    margin-top:25px;
-
-    padding:14px;
-
-    font-size:17px;
-
-    font-weight:600;
-
-}
-
-.btn{
-
-transition:.3s;
-
-font-weight:600;
-
-}
-
-.btn:hover{
-
-transform:translateY(-2px);
+    background:transparent;
 
 }
