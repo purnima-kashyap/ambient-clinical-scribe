@@ -5,7 +5,7 @@ import time
 import re
 from datetime import datetime
 
-# 1. UPDATED IMPORT: Import the class your teammate wrote
+
 from backend.rag.icd10_recommender import ICD10Recommender 
 
 ANSWER_KEY = {
@@ -49,8 +49,8 @@ def run_comprehensive_evaluation():
 
     print(f"🚀 Starting Comprehensive RAG Evaluation...\n")
     
-    # 2. INITIALIZE THE CLASS: Turn on your teammate's recommender engine
-    print("Initializing ICD10 Recommender (Loading TF-IDF Matrix)...")
+    
+    print("Initializing ICD10 Recommender (Loading FAISS Semantic Recommender...)...")
     recommender = ICD10Recommender()
     
     for filename in os.listdir(test_cases_dir):
@@ -76,10 +76,10 @@ def run_comprehensive_evaluation():
         
         start_time = time.time()
         try:
-            # 3. CALL THE METHOD: Use synchronous .recommend() instead of await
+            
             ai_response = recommender.recommend(assessment)
-            # The teammate's code returns a list of dictionaries. 
-            # Converting to string works perfectly for our regex grader!
+            
+           
             ai_response_str = str(ai_response) 
             error_msg = None
         except Exception as e:
@@ -126,5 +126,5 @@ def run_comprehensive_evaluation():
     print(f"\n📁 Detailed audit report saved to: {output_report_path}")
 
 if __name__ == "__main__":
-    # 4. REMOVED ASYNCIO: Since the teammate's code is synchronous, we just run the function directly
+    
     run_comprehensive_evaluation()
