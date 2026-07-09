@@ -28,7 +28,7 @@ def generate_embeddings(model, dataset):
     Converts all disease names into vector embeddings.
     """
 
-    diseases = dataset["disease"].tolist()
+    diseases = dataset["description"].tolist()
 
     embeddings = model.encode(diseases)
 
