@@ -25,4 +25,8 @@ async def process_audio(audio_path: str):
     # 5. Fix question labels
     merged = fix_questions(merged)
 
-    return {"segments": merged}
+    return {
+    "text": asr_result["text"],
+    "language": asr_result["language"],
+    "segments": merged,
+    }
