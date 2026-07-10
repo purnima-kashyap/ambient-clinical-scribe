@@ -3,7 +3,7 @@ import streamlit as st
 
 def show_header():
 
-    left, right = st.columns([5, 1])
+    left, right = st.columns([4, 2])
 
     with left:
 

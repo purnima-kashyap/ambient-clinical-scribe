@@ -170,13 +170,32 @@ async def process_consultation(file: UploadFile = File(...)):
             raise HTTPException(status_code=400, detail=str(e))
         except RuntimeError as e:
             raise HTTPException(status_code=500, detail=f"SOAP generation failed: {str(e)}")
+  
+        
+        # --- Step 5: Recommend ICD-10 codes ---
+        try:
+            print("SOAP RESULT:", soap_result)
+
+            assessment = soap_result.assessment
+            print("Assessment:", assessment)
+
+            icd_result = icd_recommender.recommend(assessment)
+            print("ICD RESULT:", icd_result)
+
+        except Exception as e:
+            print("ICD ERROR:", e)
+            raise HTTPException(
+                status_code=500,
+                detail=f"ICD recommendation failed: {str(e)}"
+        )
 
         # --- Step 5: Return everything tied to one consultation_id ---
         return {
             "consultation_id": consultation_id,
             "audio": audio_data,
             "transcript": processed_result,
-            "soap_note": soap_result,
+            "soap_note": soap_result.model_dump(),
+            "icd_recommendations": icd_result,
         }
 
     except HTTPException:
