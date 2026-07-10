@@ -41,7 +41,7 @@ def show_upload():
 
                 try:
                     response = requests.post(
-                        f"{API_URL}/transcribe",
+                        f"{API_URL}/process-consultation",
                         files=files
                     )
 
@@ -53,7 +53,14 @@ def show_upload():
 
                 st.success("✅ Clinical report generated successfully.")
 
-                st.session_state.transcript = response.json()["segments"]
+                result = response.json()
+
+                st.session_state.transcript = result["transcript"]["segments"]
+                st.session_state.transcript_text = result["transcript"]["text"]      # optional
+                st.session_state.language = result["transcript"]["language"]          # optional
+                st.session_state.soap = result["soap_note"]
+                st.session_state.icd = result["icd_recommendations"]
+                st.session_state.audio = result["audio"]
 
             else:
 

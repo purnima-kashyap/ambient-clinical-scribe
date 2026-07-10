@@ -54,10 +54,10 @@ def show_soap():
         return
 
     cards = [
-        ("🗣 Subjective", "#E3F2FD", soap.get("Subjective", "Not available")),
-        ("🔬 Objective", "#E8F5E9", soap.get("Objective", "Not available")),
-        ("🩺 Assessment", "#FFF3E0", soap.get("Assessment", "Not available")),
-        ("💊 Plan", "#F3E5F5", soap.get("Plan", "Not available"))
+        ("🗣 Subjective", "#E3F2FD", soap.get("subjective", "Not available")),
+        ("🔬 Objective", "#E8F5E9", soap.get("objective", "Not available")),
+        ("🩺 Assessment", "#FFF3E0", soap.get("assessment", "Not available")),
+        ("💊 Plan", "#F3E5F5", soap.get("plan", "Not available"))
     ]
 
     col1, col2 = st.columns(2)
