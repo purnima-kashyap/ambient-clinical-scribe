@@ -5,9 +5,15 @@ def show_sidebar():
 
     with st.sidebar:
 
-        st.title("🩺 AI Clinical Scribe")
+        st.markdown(
+        "<h2 style='color:#1f2937;'>🩺 AI Clinical Scribe</h2>",
+        unsafe_allow_html=True
+        )
 
-        st.caption("Ambient Intelligence for Healthcare")
+        st.markdown(
+        "<p style='color:#6b7280; font-size:14px;'>Ambient Intelligence for Healthcare</p>",
+        unsafe_allow_html=True
+        )
 
         st.divider()
 

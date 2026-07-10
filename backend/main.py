@@ -8,6 +8,9 @@ from backend.asr.asr_service import transcribe_audio_with_timestamps
 from backend.storage.cloudinary_service import upload_audio_to_cloudinary
 from backend.llm.llm_service import SOAPNoteGenerator
 from backend.services.transcription_service import process_audio
+from backend.rag.icd10_recommender import ICD10Recommender
+
+
 
 
 import os
@@ -30,9 +33,10 @@ app.add_middleware(
 )
 
 soap_generator = SOAPNoteGenerator()
+icd_recommender = ICD10Recommender()
 
 ALLOWED_EXTENSIONS = {".wav", ".mp3", ".m4a", ".webm", ".ogg"}
-MAX_FILE_SIZE = 25 * 1024 * 1024  # 25 MB
+MAX_FILE_SIZE = 200 * 1024 * 1024  # 200 MB
 TEMP_DIR = "temp_uploads"
 os.makedirs(TEMP_DIR, exist_ok=True)
 
@@ -151,30 +155,49 @@ async def process_consultation(file: UploadFile = File(...)):
 
         # --- Step 3: Transcribe ---
         try:
-            asr_result = await transcribe_audio_with_timestamps(temp_file_path)
+            processed_result = await process_audio(temp_file_path)
         except RuntimeError as e:
-            raise HTTPException(status_code=500, detail=f"Transcription failed: {str(e)}")
+            raise HTTPException(status_code=500, detail=f"Audio processing failed: {str(e)}")
 
-        if not asr_result["text"]:
+        if not processed_result["text"]:
             raise HTTPException(
                 status_code=422,
                 detail="Transcription produced no text — audio may be silent or unclear."
             )
-
+         
         # --- Step 4: Generate SOAP note ---
         try:
-            soap_result = await soap_generator.generate(asr_result["text"])
+            soap_result = await soap_generator.generate(processed_result["text"])
         except ValueError as e:
             raise HTTPException(status_code=400, detail=str(e))
         except RuntimeError as e:
             raise HTTPException(status_code=500, detail=f"SOAP generation failed: {str(e)}")
+  
+        
+        # --- Step 5: Recommend ICD-10 codes ---
+        try:
+            print("SOAP RESULT:", soap_result)
+
+            assessment = soap_result.assessment
+            print("Assessment:", assessment)
+
+            icd_result = icd_recommender.recommend(assessment)
+            print("ICD RESULT:", icd_result)
+
+        except Exception as e:
+            print("ICD ERROR:", e)
+            raise HTTPException(
+                status_code=500,
+                detail=f"ICD recommendation failed: {str(e)}"
+        )
 
         # --- Step 5: Return everything tied to one consultation_id ---
         return {
             "consultation_id": consultation_id,
             "audio": audio_data,
-            "transcript": asr_result,
-            "soap_note": soap_result,
+            "transcript": processed_result,
+            "soap_note": soap_result.model_dump(),
+            "icd_recommendations": icd_result,
         }
 
     except HTTPException:
@@ -218,6 +241,9 @@ async def handle_transcription(file: UploadFile = File(...)):
 class TranscriptRequest(BaseModel):
     transcript: str
 
+class ICDRequest(BaseModel):
+    query: str
+
 
 @app.post("/generate-soap")
 async def handle_soap_generation(request: TranscriptRequest):
@@ -225,5 +251,17 @@ async def handle_soap_generation(request: TranscriptRequest):
         return await soap_generator.generate(request.transcript)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+@app.post("/recommend-icd")
+async def recommend_icd(request: ICDRequest):
+    try:
+        recommendations = icd_recommender.recommend(request.query)
+        return {
+            "recommendations": recommendations
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
