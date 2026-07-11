@@ -22,6 +22,33 @@ def get_pipeline():
 def diarize_audio(file_path):
     pipeline = get_pipeline()
 
+    diarization = pipeline(
+        file_path,
+        num_speakers=2
+    )
+
+    results = []
+
+    print("\n========== DIARIZATION OUTPUT ==========")
+
+    for turn, _, speaker in diarization.itertracks(yield_label=True):
+        print(
+            f"Speaker: {speaker} | "
+            f"Start: {turn.start:.2f} | "
+            f"End: {turn.end:.2f}"
+        )
+
+        results.append({
+            "speaker": speaker,
+            "start": float(turn.start),
+            "end": float(turn.end)
+        })
+
+    print("========================================\n")
+
+    return results
+    pipeline = get_pipeline()
+
     diarization = pipeline(file_path)
 
     results = []
