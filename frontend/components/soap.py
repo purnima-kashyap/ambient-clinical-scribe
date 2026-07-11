@@ -41,60 +41,63 @@ def show_soap():
         if response.status_code == 200:
 
             st.success("✅ SOAP Note generated successfully.")
-
-            st.session_state.soap = response.json()
+            st.session_state["soap"] = response.json()
 
         else:
-
             st.error(response.text)
 
+    # Get the SOAP note after generation
     soap = st.session_state.get("soap")
 
     if not soap:
         return
 
-    cards = [
-        ("🗣 Subjective", "#E3F2FD", soap.get("subjective", "Not available")),
-        ("🔬 Objective", "#E8F5E9", soap.get("objective", "Not available")),
-        ("🩺 Assessment", "#FFF3E0", soap.get("assessment", "Not available")),
-        ("💊 Plan", "#F3E5F5", soap.get("plan", "Not available"))
-    ]
+    st.markdown("## 👨‍⚕️ Human-in-the-Loop Review")
+    st.info("Review and edit the SOAP note before finalizing.")
 
-    col1, col2 = st.columns(2)
+    subjective = st.text_area(
+        "🗣 Subjective",
+        value=soap.get("subjective", ""),
+        height=180
+    )
 
-    for i, (title, color, content) in enumerate(cards):
+    objective = st.text_area(
+        "🔬 Objective",
+        value=soap.get("objective", ""),
+        height=180
+    )
 
-        with (col1 if i % 2 == 0 else col2):
+    assessment = st.text_area(
+        "🩺 Assessment",
+        value=soap.get("assessment", ""),
+        height=180
+    )
 
-            st.markdown(
-                f"""
-<div style="
-background:{color};
-padding:18px;
-border-radius:16px;
-margin-bottom:18px;
-border-left:6px solid #2563EB;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-min-height:220px;
-">
+    plan = st.text_area(
+        "💊 Plan",
+        value=soap.get("plan", ""),
+        height=180
+    )
+    if st.button(
+        "✅ Finalize SOAP Note",
+        use_container_width=True
+        ):
 
-<h4 style="
-margin-top:0;
-margin-bottom:12px;
-color:#1E293B;
-">
-{title}
-</h4>
+        st.session_state["final_soap"] = {
+            "subjective": subjective,
+            "objective": objective,
+            "assessment": assessment,
+            "plan": plan
+        }
 
-<p style="
-font-size:15px;
-line-height:1.7;
-color:#334155;
-">
-{content}
-</p>
+        st.success("🎉 SOAP Note finalized successfully!")
 
-</div>
-                """,
-                unsafe_allow_html=True
-            )
+    if "final_soap" in st.session_state:
+
+        st.divider()
+
+        st.subheader("✅ Doctor Approved SOAP Note")
+
+        st.write("This is the finalized version after doctor's review.")
+
+        st.json(st.session_state["final_soap"])

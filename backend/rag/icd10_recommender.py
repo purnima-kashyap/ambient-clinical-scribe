@@ -1,40 +1,63 @@
-import os
+import faiss
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer
 
-_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "icd10_dataset.csv")
 
+from backend.vector_db.config import ICD_DATASET_PATH, VECTOR_DB_PATH
 
 class ICD10Recommender:
-    def __init__(self, csv_path: str = _DATA_PATH, top_k: int = 5):
+    def __init__(self, top_k: int = 5):
+        """
+        Initializes the Semantic RAG Recommender.
+        Heavy loading (Neural Network and Database) happens HERE, exactly once.
+        """
         self.top_k = top_k
-        self.df = pd.read_csv(csv_path)
-
+        
+        print("Loading HuggingFace Model & FAISS Index... (This will take a few seconds)")
+        
+        # 1. Load the Dataset
+        self.df = pd.read_csv(ICD_DATASET_PATH)
         if not {"code", "description"}.issubset(self.df.columns):
-            raise ValueError("icd10_dataset.csv must have 'code' and 'description' columns.")
-
-        self.vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1, 2))
-        self._description_matrix = self.vectorizer.fit_transform(self.df["description"])
+            raise ValueError("Dataset must have 'code' and 'description' columns.")
+            
+        # 2. Load the Embedding Model
+        # This is the 90MB neural network. Loading it here prevents the 2-second lag per request
+        self.model = SentenceTransformer("all-MiniLM-L6-v2")
+        
+        # 3. Load the FAISS Index
+        self.index = faiss.read_index(str(VECTOR_DB_PATH))
+        
+        print("✅ Semantic Search Engine Ready!")
 
     def recommend(self, assessment_text: str) -> list[dict]:
+        """
+        Converts the doctor's assessment into a vector and searches FAISS.
+        """
         if not assessment_text or not assessment_text.strip():
             return []
-
-        query_vector = self.vectorizer.transform([assessment_text])
-        similarities = cosine_similarity(query_vector, self._description_matrix)[0]
-
-        ranked_indices = similarities.argsort()[::-1][: self.top_k]
-
+            
+        # 1. Turn the text into mathematical numbers (Semantic Vector)
+        query_embedding = self.model.encode([assessment_text])
+        
+        # 2. Search the FAISS database for the closest vectors
+        distances, indices = self.index.search(query_embedding.astype("float32"), self.top_k)
+        
         results = []
-        for idx in ranked_indices:
-            score = float(similarities[idx])
-            if score <= 0:
+        for i in range(self.top_k):
+            idx = indices[0][i]
+            
+            # FAISS returns -1 if it can't find enough matches
+            if idx == -1: 
                 continue
+                
+            row = self.df.iloc[idx]
+            
+            # 3. Package the results (fixed the 'disease' vs 'description' bug here)
             results.append({
-                "code": self.df.iloc[idx]["code"],
-                "description": self.df.iloc[idx]["description"],
-                "confidence": round(score, 2),
+                "code": row["code"],
+                "description": row["description"], 
+                "distance": float(distances[0][i]),
+                "score": float(distances[0][i]) 
             })
-
+            
         return results
