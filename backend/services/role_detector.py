@@ -1,49 +1,82 @@
-def detect_roles(merged_segments):
-    speaker_questions = {}
+def detect_roles(segments):
+    """
+    Label each utterance as Doctor or Patient based on its content.
+    Works even if diarization mixes speaker IDs.
+    """
 
-    # Count questions asked by each speaker
-    for seg in merged_segments:
-        speaker = seg["speaker"]
+    doctor_starters = (
+        "what",
+        "when",
+        "where",
+        "why",
+        "how",
+        "how long",
+        "since when",
+        "do you",
+        "did you",
+        "are you",
+        "have you",
+        "can you",
+        "could you",
+        "would you",
+        "will you",
+        "tell me",
+        "describe",
+        "show me",
+        "any",
+        "is there",
+        "does it",
+    )
 
-        if speaker not in speaker_questions:
-            speaker_questions[speaker] = 0
+    patient_starters = (
+        "yes",
+        "no",
+        "i",
+        "i'm",
+        "i’ve",
+        "i've",
+        "my",
+        "me",
+        "it hurts",
+        "pain",
+        "fever",
+        "cough",
+        "headache",
+        "vomiting",
+        "around",
+        "about",
+        "sometimes",
+        "never",
+        "always",
+        "for",
+        "since",
+    )
 
-        if seg["text"].strip().endswith("?"):
-            speaker_questions[speaker] += 1
+    previous_role = None
 
-    # Need exactly two speakers
-    if len(speaker_questions) != 2:
-        return merged_segments
+    for seg in segments:
 
-    # Speaker with more questions is Doctor
-    doctor = max(speaker_questions, key=speaker_questions.get)
+        text = seg["text"].strip().lower()
 
-    # The other speaker is Patient
-    patient = [s for s in speaker_questions if s != doctor][0]
-
-    # Rename speakers
-    for seg in merged_segments:
-        if seg["speaker"] == doctor:
+        # Doctor question
+        if text.endswith("?") or text.startswith(doctor_starters):
             seg["speaker"] = "Doctor"
-        elif seg["speaker"] == patient:
+            previous_role = "Doctor"
+
+        # Patient reply
+        elif text.startswith(patient_starters):
             seg["speaker"] = "Patient"
+            previous_role = "Patient"
 
-    return merged_segments
-
-
-def fix_questions(segments):
-    for i in range(len(segments) - 1):
-        current = segments[i]
-        nxt = segments[i + 1]
-
-        if (
-            current["speaker"] == "Patient"
-            and current["text"].strip().endswith("?")
-            and nxt["speaker"] == "Patient"
-            and nxt["text"].strip().lower().startswith(
-                ("yes", "no", "i", "my", "only")
-            )
+        # Short reply after doctor's question
+        elif (
+            previous_role == "Doctor"
+            and len(text.split()) <= 6
         ):
-            current["speaker"] = "Doctor"
+            seg["speaker"] = "Patient"
+            previous_role = "Patient"
+
+        else:
+            seg["speaker"] = previous_role or seg["speaker"]
 
     return segments
