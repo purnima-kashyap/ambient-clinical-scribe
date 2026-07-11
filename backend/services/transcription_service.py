@@ -24,8 +24,6 @@ async def process_audio(audio_path: str):
     # 4. Detect Doctor/Patient
     merged = detect_roles(merged)
 
-
-
     return {
     "text": asr_result["text"],
     "language": asr_result["language"],
