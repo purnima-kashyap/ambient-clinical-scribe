@@ -10,12 +10,9 @@ from backend.llm.llm_service import SOAPNoteGenerator
 from backend.services.transcription_service import process_audio
 from backend.rag.icd10_recommender import ICD10Recommender
 
-
-
-
-import os
 import uuid
 import asyncio
+import json
 
 app = FastAPI()
 
@@ -244,6 +241,12 @@ class TranscriptRequest(BaseModel):
 class ICDRequest(BaseModel):
     query: str
 
+class FinalSOAPRequest(BaseModel):
+    subjective: str
+    objective: str
+    assessment: str
+    plan: str    
+
 
 @app.post("/generate-soap")
 async def handle_soap_generation(request: TranscriptRequest):
@@ -265,3 +268,32 @@ async def recommend_icd(request: ICDRequest):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/finalize-soap")
+async def finalize_soap(note: FinalSOAPRequest):
+
+    folder = "data/finalized_notes"
+
+    os.makedirs(folder, exist_ok=True)
+
+    file_path = os.path.join(
+        folder,
+        "final_soap_note.json"
+    )
+
+    with open(
+        file_path,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            note.model_dump(),
+            f,
+            indent=4
+        )
+
+    return {
+        "message": "SOAP note saved successfully"
+    }       
