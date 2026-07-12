@@ -6,23 +6,67 @@ API_URL = "http://127.0.0.1:8000"
 
 def show_upload():
 
-    st.subheader("🎤 Upload Consultation")
+    st.subheader("🎤 Consultation Input")
 
     st.caption(
-        "Upload a doctor-patient consultation recording to generate a transcript, SOAP note, and ICD-10 recommendations."
+        "Upload or record a doctor-patient consultation to generate a transcript, SOAP note, and ICD-10 recommendations."
     )
 
-    uploaded_file = st.file_uploader(
-        "Choose an audio file",
-        type=["wav", "mp3", "m4a"],
-        help="Supported formats: WAV, MP3, M4A"
+    # Choose input method
+    option = st.radio(
+        "Choose Consultation Input",
+        ["Upload Audio", "Record Audio"],
+        horizontal=True
     )
 
-    if uploaded_file:
+    audio_source = None
 
-        st.audio(uploaded_file)
+    # -------------------------------
+    # Upload Audio
+    # -------------------------------
+    if option == "Upload Audio":
 
-        st.success(f"Selected file: **{uploaded_file.name}**")
+        uploaded_file = st.file_uploader(
+            "Choose an audio file",
+            type=["wav", "mp3", "m4a"],
+            help="Supported formats: WAV, MP3, M4A"
+        )
+
+        if uploaded_file:
+
+            st.audio(uploaded_file)
+
+            st.success(f"Selected file: **{uploaded_file.name}**")
+
+            audio_source = (
+                uploaded_file.name,
+                uploaded_file.getvalue(),
+                uploaded_file.type
+            )
+
+    # -------------------------------
+    # Record Audio
+    # -------------------------------
+    elif option == "Record Audio":
+
+        recorded_audio = st.audio_input("🎙️ Record Consultation")
+
+        if recorded_audio:
+
+            st.audio(recorded_audio)
+
+            st.success("Recording captured successfully.")
+
+            audio_source = (
+                "consultation.wav",
+                recorded_audio.getvalue(),
+                "audio/wav"
+            )
+
+    # -------------------------------
+    # Generate Report
+    # -------------------------------
+    if audio_source:
 
         if st.button(
             "🩺 Generate Clinical Report",
@@ -32,11 +76,7 @@ def show_upload():
             with st.spinner("Generating clinical report..."):
 
                 files = {
-                    "file": (
-                        uploaded_file.name,
-                        uploaded_file.getvalue(),
-                        uploaded_file.type
-                    )
+                    "file": audio_source
                 }
 
                 try:
@@ -46,7 +86,7 @@ def show_upload():
                     )
 
                 except requests.exceptions.ConnectionError:
-                    st.error("Backend server is not running.")
+                    st.error("❌ Backend server is not running.")
                     st.stop()
 
             if response.status_code == 200:
@@ -55,11 +95,18 @@ def show_upload():
 
                 result = response.json()
 
+                # Transcript
                 st.session_state.transcript = result["transcript"]["segments"]
-                st.session_state.transcript_text = result["transcript"]["text"]      # optional
-                st.session_state.language = result["transcript"]["language"]          # optional
+                st.session_state.transcript_text = result["transcript"]["text"]
+                st.session_state.language = result["transcript"]["language"]
+
+                # SOAP Note
                 st.session_state.soap = result["soap_note"]
+
+                # ICD Recommendations
                 st.session_state.icd = result["icd_recommendations"]
+
+                # Audio Information
                 st.session_state.audio = result["audio"]
 
             else:
