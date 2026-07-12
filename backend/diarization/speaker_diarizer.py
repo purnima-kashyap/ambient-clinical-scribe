@@ -44,7 +44,6 @@ def diarize_audio(file_path):
             "end": float(turn.end)
         })
 
-    print("========================================\n")
 
     return results
     pipeline = get_pipeline()
@@ -53,7 +52,6 @@ def diarize_audio(file_path):
 
     results = []
 
-    print("\n========== DIARIZATION OUTPUT ==========")
 
     for turn, _, speaker in diarization.itertracks(yield_label=True):
         print(
@@ -68,7 +66,6 @@ def diarize_audio(file_path):
             "end": float(turn.end)
         })
 
-    print("========================================\n")
 
     return results
     pipeline = get_pipeline()
