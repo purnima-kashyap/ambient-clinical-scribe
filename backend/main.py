@@ -1,3 +1,5 @@
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -8,12 +10,9 @@ from backend.llm.llm_service import SOAPNoteGenerator
 from backend.services.transcription_service import process_audio
 from backend.rag.icd10_recommender import ICD10Recommender
 
-
-
-
-import os
 import uuid
 import asyncio
+import json
 
 app = FastAPI()
 
@@ -170,13 +169,32 @@ async def process_consultation(file: UploadFile = File(...)):
             raise HTTPException(status_code=400, detail=str(e))
         except RuntimeError as e:
             raise HTTPException(status_code=500, detail=f"SOAP generation failed: {str(e)}")
+  
+        
+        # --- Step 5: Recommend ICD-10 codes ---
+        try:
+            print("SOAP RESULT:", soap_result)
+
+            assessment = soap_result.assessment
+            print("Assessment:", assessment)
+
+            icd_result = icd_recommender.recommend(assessment)
+            print("ICD RESULT:", icd_result)
+
+        except Exception as e:
+            print("ICD ERROR:", e)
+            raise HTTPException(
+                status_code=500,
+                detail=f"ICD recommendation failed: {str(e)}"
+        )
 
         # --- Step 5: Return everything tied to one consultation_id ---
         return {
             "consultation_id": consultation_id,
             "audio": audio_data,
             "transcript": processed_result,
-            "soap_note": soap_result,
+            "soap_note": soap_result.model_dump(),
+            "icd_recommendations": icd_result,
         }
 
     except HTTPException:
@@ -223,6 +241,12 @@ class TranscriptRequest(BaseModel):
 class ICDRequest(BaseModel):
     query: str
 
+class FinalSOAPRequest(BaseModel):
+    subjective: str
+    objective: str
+    assessment: str
+    plan: str    
+
 
 @app.post("/generate-soap")
 async def handle_soap_generation(request: TranscriptRequest):
@@ -244,3 +268,32 @@ async def recommend_icd(request: ICDRequest):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/finalize-soap")
+async def finalize_soap(note: FinalSOAPRequest):
+
+    folder = "data/finalized_notes"
+
+    os.makedirs(folder, exist_ok=True)
+
+    file_path = os.path.join(
+        folder,
+        "final_soap_note.json"
+    )
+
+    with open(
+        file_path,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            note.model_dump(),
+            f,
+            indent=4
+        )
+
+    return {
+        "message": "SOAP note saved successfully"
+    }       
