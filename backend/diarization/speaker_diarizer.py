@@ -1,7 +1,11 @@
 import os
+
+import soundfile as sf
+import torch
 from pyannote.audio import Pipeline
 
 pipeline = None
+
 
 def get_pipeline():
     global pipeline
@@ -10,8 +14,8 @@ def get_pipeline():
         print("Loading diarization model...")
 
         pipeline = Pipeline.from_pretrained(
-            "pyannote/speaker-diarization",
-            use_auth_token=os.getenv("HF_TOKEN")
+            "pyannote/speaker-diarization-3.1",
+            token=os.getenv("HF_TOKEN")
         )
 
         print("Pipeline loaded!")
@@ -19,10 +23,22 @@ def get_pipeline():
     return pipeline
 
 
+def _load_waveform(file_path):
+    # pyannote 4.x decodes file paths through torchcodec, which needs a
+    # system FFmpeg (full-shared) build that isn't present here. Preloading
+    # the audio in memory and handing pyannote a {"waveform", "sample_rate"}
+    # dict bypasses torchcodec entirely; only torchaudio is used, for the
+    # internal downmix/resample to 16 kHz.
+    data, sample_rate = sf.read(file_path, dtype="float32", always_2d=True)
+    # soundfile returns (time, channel); pyannote expects (channel, time).
+    waveform = torch.from_numpy(data.T)
+    return {"waveform": waveform, "sample_rate": sample_rate}
+
+
 def diarize_audio(file_path):
     pipeline = get_pipeline()
 
-    diarization = pipeline(file_path)
+    diarization = pipeline(_load_waveform(file_path))
 
     results = []
 
@@ -42,19 +58,5 @@ def diarize_audio(file_path):
         })
 
     print("========================================\n")
-
-    return results
-    pipeline = get_pipeline()
-
-    diarization = pipeline(file_path)
-
-    results = []
-
-    for turn, _, speaker in diarization.itertracks(yield_label=True):
-        results.append({
-            "speaker": speaker,
-            "start": float(turn.start),
-            "end": float(turn.end)
-        })
 
     return results
