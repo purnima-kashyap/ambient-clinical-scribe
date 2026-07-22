@@ -59,6 +59,7 @@ class SOAPNoteGenerator:
         """
         llm = ChatOllama(
             model=model,
+            
             temperature=0,
             format="json",
             timeout=60,       

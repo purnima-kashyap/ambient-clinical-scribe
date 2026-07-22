@@ -13,9 +13,13 @@ def get_pipeline():
     if pipeline is None:
         print("Loading diarization model...")
 
+        token = os.getenv("HF_TOKEN")
+        print("HF_TOKEN loaded:", token is not None)
+        print("HF_TOKEN prefix:", token[:8] if token else None)
+
         pipeline = Pipeline.from_pretrained(
             "pyannote/speaker-diarization-3.1",
-            token=os.getenv("HF_TOKEN")
+            use_auth_token=os.getenv("HF_TOKEN")
         )
 
         print("Pipeline loaded!")
@@ -60,14 +64,13 @@ def diarize_audio(file_path):
             "end": float(turn.end)
         })
 
-
     return results
+
     pipeline = get_pipeline()
 
     diarization = pipeline(file_path)
 
     results = []
-
 
     for turn, _, speaker in diarization.itertracks(yield_label=True):
         print(
@@ -81,6 +84,5 @@ def diarize_audio(file_path):
             "start": float(turn.start),
             "end": float(turn.end)
         })
-
 
     return results
